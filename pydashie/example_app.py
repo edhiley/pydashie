@@ -8,7 +8,8 @@ def run(app, xyzzy):
     ]
 
     try:
-        app.run(debug=True,
+        app.run(host='0.0.0.0',
+                debug=True,
                 port=5000,
                 threaded=True,
                 use_reloader=False,
