@@ -1,6 +1,8 @@
 import os
 import logging
+
 from flask import Flask, render_template, Response, send_from_directory, request, current_app
+from scss import Scss
 
 app = Flask(__name__)
 logging.basicConfig()
@@ -17,6 +19,10 @@ def custom_layout(dashlayout):
 
 @app.route("/assets/application.js")
 def javascripts():
+
+    # TODO: refactor - this is a mess
+    # should just build and cache js.
+
     if not hasattr(current_app, 'javascripts'):
         import coffeescript
         scripts = [
@@ -39,6 +45,7 @@ def javascripts():
             'assets/javascripts/app.js',
             #'widgets/clock/clock.coffee',
             'widgets/number/number.coffee',
+            'widgets/priority_list/priority_list.coffee',
         ]
         nizzle = True
         if not nizzle:
@@ -69,19 +76,30 @@ def javascripts():
             current_app.javascripts = output
         else:
             current_app.javascripts = ''.join(output)
-        
 
     return Response(current_app.javascripts, mimetype='application/javascript')
 
 @app.route('/assets/application.css')
 def application_css():
+    # TODO: refactor !!
+    
     scripts = [
         'assets/stylesheets/application.css',
     ]
-    output = ''
+    output = []
     for path in scripts:
-        output = output + open(path).read()
-    return Response(output, mimetype='text/css')
+        output.append(open(path).read())
+
+    compilelist = [
+        'widgets/priority_list/priority_list.scss'
+    ]
+
+    css = Scss()
+    for path in compilelist:
+        scss = open(path).read()
+        output.append(css.compile(scss))
+
+    return Response('\n'.join(output), mimetype='text/css')
 
 @app.route('/assets/images/<path:filename>')
 def send_static_img(filename):
@@ -90,6 +108,7 @@ def send_static_img(filename):
 
 @app.route('/views/<widget_name>.html')
 def widget_html(widget_name):
+    print widget_name
     html = '%s.html' % widget_name
     path = os.path.join('widgets', widget_name, html)
     if os.path.isfile(path):
