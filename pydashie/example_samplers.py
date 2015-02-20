@@ -38,16 +38,58 @@ class TriageAssignedJiraSampler(DashieSampler):
 
 class JenkinsSampler(DashieSampler):
 
-    def __init__(self, *args, **kwargs):
-        DashieSampler.__init__(self, *args, **kwargs)
-
+    JOBS_KEY = ['name']
+    STATUS_KEY = ['color']
+    SEVERITY_MAP = {
+	    'red': '1',
+	    'notbuilt': '2',
+	    'blue_anime': '3',
+	    'blue': '3',
+	    'disabled': '3',
+	}
+    SEVERITY_LABEL_MAP = {
+        'red': 'failed',
+        'notbuilt': 'not built',
+        'blue_anime': 'building',
+        'blue': 'built',
+        'disabled': 'disabled',
+	}
+    JOB_FILTER = ['_r30012_special_hf019']
+	
     def name(self):
         return 'jenkins'
+	
+    def __init__(self, *args, **kwargs):
+        DashieSampler.__init__(self, *args, **kwargs)
+ 
+    def _findByKey(self, val, keys):
+
+        if len(keys) == 0:
+            return val
+
+        return self._findByKey(val[keys[0]], keys[1:])
+        
+    def _jobFilter(self, job):
+    
+        jobName = self._findByKey(job, self.JOBS_KEY)
+        return jobName in self.JOB_FILTER
+
+    def _parseRequest(self, json):
+
+        status = self._findByKey(json, self.STATUS_KEY)
+        jobName = self._findByKey(json, self.JOBS_KEY)
+		
+        return {
+            'label': status,
+            'value': self._findByKey(json, self.JOBS_KEY),
+            'importanceLabel': self.SEVERITY_LABEL_MAP[status],
+            'importanceValue': self.SEVERITY_MAP[status],
+        }
 
     def sample(self):
-        # r = requests.get('http://localhost:8080/jira/triage_assigned.json', auth=('user', 'pass'))           
-        # return {'items': [self._parseRequest(issue) for issue in r.json()['issues']]}
-        return {'items': [{ 'label': 'test', 'value': 'tets val' }] }
+        r = requests.get('http://localhost:8080/jenkins/jenkins_example.json', auth=('user', 'pass'))
+        jobs = r.json()['jobs']
+        return {'items': [self._parseRequest(job) for job in jobs if self._jobFilter(job)]}
 
 
 class SynergySampler(DashieSampler):

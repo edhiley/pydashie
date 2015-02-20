@@ -1,0 +1,33 @@
+{
+  "assignedLabels" : [
+    {
+      
+    },
+    {
+      
+    }
+  ],
+  "mode" : "EXCLUSIVE",
+  "nodeDescription" : "the master Jenkins node",
+  "nodeName" : "",
+  "numExecutors" : 1,
+  "description" : null,
+  "jobs" : [
+    {
+      "name" : "_r30012_special_hf019",
+      "url" : "http://nhss-aux.bjss.co.uk:8080/job/_r30012_special_hf019/",
+      "color" : "blue"
+    },
+    {
+      "name" : "_r30012_special_hf019-dbs-integration",
+      "url" : "http://nhss-aux.bjss.co.uk:8080/job/_r30012_special_hf019-dbs-integration/",
+      "color" : "notbuilt"
+    },
+    {
+      "name" : "_r30012_special_hf019-ui",
+      "url" : "http://nhss-aux.bjss.co.uk:8080/job/_r30012_special_hf019-ui/",
+      "color" : "notbuilt"
+    }
+    ]
+}
+    
