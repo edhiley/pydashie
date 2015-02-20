@@ -36,6 +36,20 @@ class TriageAssignedJiraSampler(DashieSampler):
         r = requests.get('http://localhost:8080/jira/triage_assigned.json', auth=('user', 'pass'))           
         return {'items': [self._parseRequest(issue) for issue in r.json()['issues']]}
 
+class JenkinsSampler(DashieSampler):
+
+    def __init__(self, *args, **kwargs):
+        DashieSampler.__init__(self, *args, **kwargs)
+
+    def name(self):
+        return 'jenkins'
+
+    def sample(self):
+        # r = requests.get('http://localhost:8080/jira/triage_assigned.json', auth=('user', 'pass'))           
+        # return {'items': [self._parseRequest(issue) for issue in r.json()['issues']]}
+        return {'items': [{ 'label': 'test', 'value': 'tets val' }] }
+
+
 class SynergySampler(DashieSampler):
     def __init__(self, *args, **kwargs):
         DashieSampler.__init__(self, *args, **kwargs)

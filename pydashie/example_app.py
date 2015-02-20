@@ -6,6 +6,7 @@ def run(app, xyzzy):
         BuzzwordsSampler(xyzzy, 2), # 10
         ConvergenceSampler(xyzzy, 1),
         TriageAssignedJiraSampler(xyzzy, 3),
+        JenkinsSampler(xyzzy, 3),
     ]
 
     try:

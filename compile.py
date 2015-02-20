@@ -8,15 +8,10 @@ from scss import Scss
 log = logging.getLogger('PydashieCompiler')
 logging.basicConfig()
 log.setLevel(logging.INFO)
-#Requirements:
 
-#pip install pyScss
-
-
-#
 def main():
     #Options
-    refreshDashingCode=True
+    refreshDashingCode=False
     
     
     #Check out dashing into temp directory
@@ -46,6 +41,7 @@ def main():
         log.info('Cloning Dashing Code')
         subprocess.call("git clone https://github.com/Shopify/dashing", shell=True)
     fileList = []
+    print dashing_dir
     for root, subFolders, files in os.walk(dashing_dir):
         for fileName in files:
             if 'scss' in fileName: 
