@@ -54,7 +54,12 @@ class JenkinsSampler(DashieSampler):
         'blue': 'built',
         'disabled': 'disabled',
 	}
-    JOB_FILTER = ['_r30012_special_hf019']
+    JOB_FILTER = ['spineii-main-caredatadownloader','spineii-main-ci','spineii-main-ci-latest-os-patches',\
+	'spineii-main-ci-latest-os-patches-ui','spineii-main-demographicspineapplication','spineii-main-everything'\
+	,'spineii-main-everything-sonar','spineii-main-operationsadminservice','spineii-main-overnight',\
+	'spineii-main-overnight-repeatable-tests','spineii-main-prescriptionsadmin','spineii-main-selfservice'\
+	,'spineii-main-sonar-all-projects','spineii-main-spinealertservice','spineii-main-spinereportingservice'\
+	,'spineii-main-summarycarerecord']
 	
     def name(self):
         return 'jenkins'
