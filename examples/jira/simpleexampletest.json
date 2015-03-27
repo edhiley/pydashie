@@ -1,0 +1,106 @@
+{
+   "jobs" : [
+      {
+         "lastBuild" : {
+            "result" : "SUCCESS"
+         },
+         "displayName" : "_r30012_special_hf019"
+      },
+      {
+         "lastBuild" : null,
+         "displayName" : "_r30012_special_hf019-dbs-integration"
+      },
+      {
+         "lastBuild" : null,
+         "displayName" : "_r30012_special_hf019-ui"
+      },
+      {
+         "lastBuild" : {
+            "result" : "SUCCESS"
+         },
+         "displayName" : "_r30014_special_hf063"
+      },
+      {
+         "lastBuild" : {
+            "result" : "SUCCESS"
+         },
+         "displayName" : "_r30014_special_hf063_hf072"
+      },
+      {
+         "lastBuild" : {
+            "result" : "SUCCESS"
+         },
+         "displayName" : "_r30015_special_hf076"
+      },
+      {
+         "lastBuild" : {
+            "result" : "FAILURE"
+         },
+         "displayName" : "_r300_blockingFixesBranch001"
+      },
+      {
+         "lastBuild" : {
+            "result" : "SUCCESS"
+         },
+         "displayName" : "_r300_blockingFixesBranch001-ui"
+      },
+      {
+         "lastBuild" : {
+            "result" : "SUCCESS"
+         },
+         "displayName" : "_r300_blockingFixesBranch002"
+      },
+      {
+         "lastBuild" : null,
+         "displayName" : "_r300_blockingFixesBranch002-ui"
+      },
+      {
+         "lastBuild" : {
+            "result" : "FAILURE"
+         },
+         "displayName" : "_r300_blockingFixesBranch003"
+      },
+      {
+         "lastBuild" : {
+            "result" : "FAILURE"
+         },
+         "displayName" : "_r300_blockingFixesBranch003-ui"
+      },
+      {
+         "lastBuild" : {
+            "result" : "FAILURE"
+         },
+         "displayName" : "_r300_blockingFixesBranch004"
+      },
+      {
+         "lastBuild" : {
+            "result" : "SUCCESS"
+         },
+         "displayName" : "_r300_blockingFixesBranch004-ui"
+      },
+      {
+         "lastBuild" : {
+            "result" : "SUCCESS"
+         },
+         "displayName" : "_r300_blockingFixesBranch005"
+      },
+      {
+         "lastBuild" : {
+            "result" : "SUCCESS"
+         },
+         "displayName" : "_r300_blockingFixesBranch005-ui"
+      },
+      {
+         "lastBuild" : {
+            "result" : "SUCCESS"
+         },
+         "displayName" : "_r300_blockingFixesBranch006"
+      },
+      {
+         "lastBuild" : {
+            "result" : "SUCCESS"
+         },
+         "displayName" : "_r300_blockingFixesBranch006-ui"
+      }
+   ]
+}

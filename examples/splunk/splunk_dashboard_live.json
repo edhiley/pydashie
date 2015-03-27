@@ -1,0 +1,203 @@
+{
+    "GenericHeader_3_2_0": {
+        "label": "Average splunkd uptime (in days)"
+    },
+    "HiddenSearch_5_2_2": {
+        "search": "index=_internal source=\"*splunkd.log\" \"splunkd starting\" OR \"shutting down splunkd\" | transaction startswith=\"splunkd starting\" endswith=\"shutting down splunkd\""
+    },
+    "HiddenSearch_2_1_1": {
+        "search": "index=_internal source=\"*splunkd_access.log\" NOT uri=/services/streams/* NOT uri_path=/services/search/jobs/export | stats avg(spent) as d | eval d = round(d/1000, 3) | gauge d",
+        "earliest": "-1h",
+        "autoRun": "True"
+    },
+    "SimpleResultsTable_0_2_1": {
+        "fieldFormats": "none",
+        "offset": "0",
+        "drilldown": "row",
+        "drilldownPrefix": "click",
+        "allowTransformedFieldSelect": "false",
+        "entityName": "auto",
+        "displayMenu": "False",
+        "dataOverlayMode": "none",
+        "count": "10",
+        "maxLines": "10",
+        "displayRowNumbers": "on"
+    },
+    "ViewRedirectorLink_3_2_0": {
+        "dispatchBeforeRedirect": "False",
+        "popup": "False",
+        "viewTarget": "flashtimeline",
+        "sendBaseSID": "False",
+        "label": "View full results"
+    },
+    "Paginator_1_1_0": {
+        "entityName": "results",
+        "count": "5",
+        "maxPages": "10"
+    },
+    "TitleBar_0_0_0": {
+        "showActionsMenu": "True",
+        "actionsMenuFilter": "dashboard"
+    },
+    "HiddenSearch_7_0_0": {
+        "search": "index=_internal source=*splunkd.log component=\"dateparserverbose\" | dedup message | fields message",
+        "earliest": "-24h",
+        "autoRun": "True",
+        "group": "Most recent timestamping issues",
+        "groupLabel": "Most recent timestamping issues"
+    },
+    "HiddenSearch_4_1_2": {
+        "search": "index=_internal source=\"*splunkd.log\" \"splunkd starting\" OR \"shutting down splunkd\" | transaction startswith=\"splunkd starting\" endswith=\"shutting down splunkd\" | stats avg(duration) as avgdur | eval avgdur = round(avgdur/86400,3) | gauge avgdur",
+        "autoRun": "True"
+    },
+    "HiddenSearch_6_0_0": {
+        "search": "index=_internal source=*splunkd.log (log_level=\"fatal\" OR log_level=\"error\")| dedup punct| head 100 | fields message",
+        "earliest": "-24h",
+        "autoRun": "True",
+        "group": "Most recent splunkd errors",
+        "groupLabel": "Most recent splunkd errors"
+    },
+    "ViewRedirectorLink_1_3_0": {
+        "dispatchBeforeRedirect": "False",
+        "popup": "False",
+        "viewTarget": "flashtimeline",
+        "sendBaseSID": "False",
+        "label": "View full results"
+    },
+    "HiddenChartFormatter_1_2_1": {
+        "charting.gaugeColors": "[0x84E900,0xFFE800,0xBF3030]",
+        "charting.chart.style": "shiny",
+        "charting.chart.orientation": "x",
+        "charting.chart": "markerGauge",
+        "charting.chart.rangeValues": "[0,.25,.5,2]"
+    },
+    "HiddenChartFormatter_0_2_1": {
+        "charting.gaugeColors": "[0x84E900,0xFFE800,0xBF3030]",
+        "charting.chart.style": "shiny",
+        "charting.chart": "radialGauge",
+        "charting.chart.rangeValues": "[0,1,9,50]"
+    },
+    "JSChart_0_3_0": {
+        "enableResize": "True",
+        "resultTruncationLimit": "0",
+        "drilldownPrefix": "click",
+        "width": "100%",
+        "maxResultCount": "500",
+        "height": "210px"
+    },
+    "HiddenSearch_1_2_2": {
+        "search": "index=_internal source=\"*splunkd.log\" log_level=\"error\""
+    },
+    "AppBar_0_0_0": {},
+    "ViewRedirectorLink_0_3_0": {
+        "dispatchBeforeRedirect": "False",
+        "popup": "False",
+        "viewTarget": "flashtimeline",
+        "sendBaseSID": "False",
+        "label": "View full results"
+    },
+    "ViewRedirector_1_4_0": {
+        "popup": "False",
+        "viewTarget": "flashtimeline",
+        "sendBaseSID": "False",
+        "dispatchBeforeRedirect": "False"
+    },
+    "ConvertToDrilldownSearch_1_3_0": {
+        "drilldownPrefix": "click",
+        "enableDebugOutput": "False",
+        "drilldown.direction": "down"
+    },
+    "ConvertToDrilldownSearch_0_3_0": {
+        "drilldownPrefix": "click",
+        "enableDebugOutput": "False",
+        "drilldown.direction": "down"
+    },
+    "ViewRedirectorLink_4_2_0": {
+        "dispatchBeforeRedirect": "False",
+        "popup": "False",
+        "viewTarget": "flashtimeline",
+        "sendBaseSID": "False",
+        "label": "View full results"
+    },
+    "GenericHeader_1_2_0": {
+        "label": "Splunkd errors this hour"
+    },
+    "Message_0_0_0": {
+        "maxSize": "1",
+        "filter": "*",
+        "clearOnJobDispatch": "False",
+        "level": "*"
+    },
+    "Paginator_0_1_0": {
+        "entityName": "results",
+        "count": "5",
+        "maxPages": "10"
+    },
+    "JSChart_1_3_0": {
+        "enableResize": "True",
+        "resultTruncationLimit": "0",
+        "drilldownPrefix": "click",
+        "width": "100%",
+        "maxResultCount": "500",
+        "height": "210px"
+    },
+    "HiddenSearch_0_1_0": {
+        "search": "index=_internal source=\"*splunkd.log\" log_level=\"error\" | stats count as errors | gauge errors",
+        "earliest": "-1h",
+        "autoRun": "True"
+    },
+    "ViewRedirectorLink_2_3_0": {
+        "dispatchBeforeRedirect": "False",
+        "popup": "False",
+        "viewTarget": "flashtimeline",
+        "sendBaseSID": "False",
+        "label": "View full results"
+    },
+    "JSChart_2_3_0": {
+        "enableResize": "True",
+        "resultTruncationLimit": "0",
+        "drilldownPrefix": "click",
+        "width": "100%",
+        "maxResultCount": "500",
+        "height": "210px"
+    },
+    "HiddenChartFormatter_2_2_1": {
+        "charting.gaugeColors": "[0xBF3030,0xFFE800,0x84E900]",
+        "charting.chart.style": "shiny",
+        "charting.chart": "fillerGauge",
+        "charting.chart.rangeValues": "[0,.0416,1,7]"
+    },
+    "GenericHeader_2_2_0": {
+        "label": "Average splunkd access delay this hour (in s)"
+    },
+    "HiddenSearch_3_2_2": {
+        "search": "index=_internal source=\"*splunkd_access.log\" NOT uri=/services/streams/* NOT uri_path=/services/search/jobs/export"
+    },
+    "ViewRedirector_0_4_0": {
+        "popup": "False",
+        "viewTarget": "flashtimeline",
+        "sendBaseSID": "False",
+        "dispatchBeforeRedirect": "False"
+    },
+    "AccountBar_0_0_0": {
+        "cancelJobsOnLogoClick": "True",
+        "popupTitle": "",
+        "mode": "full"
+    },
+    "GenericHeader_0_0_0": {
+        "label": "Status"
+    },
+    "SimpleResultsTable_1_2_1": {
+        "fieldFormats": "none",
+        "offset": "0",
+        "drilldown": "row",
+        "drilldownPrefix": "click",
+        "allowTransformedFieldSelect": "false",
+        "entityName": "auto",
+        "displayMenu": "False",
+        "dataOverlayMode": "none",
+        "count": "10",
+        "maxLines": "10",
+        "displayRowNumbers": "on"
+    }
+}

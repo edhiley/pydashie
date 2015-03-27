@@ -44,15 +44,17 @@ class JenkinsSampler(DashieSampler):
 	    'red': '1',
 	    'notbuilt': '2',
 	    'blue_anime': '3',
-	    'blue': '3',
-	    'disabled': '3',
+	    'blue': '4',
+	    'disabled': '5',
 	}
     SEVERITY_LABEL_MAP = {
-        'red': 'failed',
-        'notbuilt': 'not built',
-        'blue_anime': 'building',
-        'blue': 'built',
-        'disabled': 'disabled',
+	    'red': 'Failed',
+        'notbuilt': 'Not Built',
+        'blue_anime': 'Building',
+        'blue': 'Built',
+        'disabled': 'Disabled',
+	
+      
 	}
     JOB_FILTER = ['spineii-main-caredatadownloader','spineii-main-ci','spineii-main-ci-latest-os-patches',\
 	'spineii-main-ci-latest-os-patches-ui','spineii-main-demographicspineapplication','spineii-main-everything'\
@@ -61,9 +63,12 @@ class JenkinsSampler(DashieSampler):
 	,'spineii-main-sonar-all-projects','spineii-main-spinealertservice','spineii-main-spinereportingservice'\
 	,'spineii-main-summarycarerecord']
 	
+	
+
     def name(self):
         return 'jenkins'
-	
+			
+			
     def __init__(self, *args, **kwargs):
         DashieSampler.__init__(self, *args, **kwargs)
  
@@ -80,13 +85,15 @@ class JenkinsSampler(DashieSampler):
         return jobName in self.JOB_FILTER
 
     def _parseRequest(self, json):
-
-        status = self._findByKey(json, self.STATUS_KEY)
-        jobName = self._findByKey(json, self.JOBS_KEY)
 		
+        status = self._findByKey(json, self.STATUS_KEY)
+		
+        jobName = self._findByKey(json, self.JOBS_KEY)
+        
+        		
         return {
-            'label': status,
-            'value': self._findByKey(json, self.JOBS_KEY),
+            'label': self.SEVERITY_LABEL_MAP[status],
+			'value': self._findByKey(json, self.JOBS_KEY),
             'importanceLabel': self.SEVERITY_LABEL_MAP[status],
             'importanceValue': self.SEVERITY_MAP[status],
         }
@@ -95,6 +102,7 @@ class JenkinsSampler(DashieSampler):
         r = requests.get('http://localhost:8080/jenkins/jenkins_example.json', auth=('user', 'pass'))
         jobs = r.json()['jobs']
         return {'items': [self._parseRequest(job) for job in jobs if self._jobFilter(job)]}
+
 
 
 class SynergySampler(DashieSampler):
