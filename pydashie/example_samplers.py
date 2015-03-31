@@ -4,7 +4,10 @@ import random
 import requests
 import collections
 
-class TriageAssignedJiraSampler(DashieSampler):
+#### NEWLY ADDED ####
+
+
+class QueryTestJiraSampler(DashieSampler):
 
     SEVERITY_KEY = ['fields','customfield_10009','value']
     SUMMARY_KEY = ['fields', 'summary']
@@ -14,7 +17,7 @@ class TriageAssignedJiraSampler(DashieSampler):
         DashieSampler.__init__(self, *args, **kwargs)
 
     def name(self):
-        return 'triageassigned'
+        return 'querytest'
 
     def _findByKey(self, val, keys):
 
@@ -33,8 +36,83 @@ class TriageAssignedJiraSampler(DashieSampler):
         }
 
     def sample(self):
-        r = requests.get('http://localhost:8080/jira/triage_assigned.json', auth=('user', 'pass'))           
+        r = requests.get('http://localhost:8080/jira/jira_query.json', auth=('user', 'pass'))           
         return {'items': [self._parseRequest(issue) for issue in r.json()['issues']]}
+
+
+#### NEWLY ADDED ####
+
+#class JiraDashboardSampler(DashieSampler):
+
+#    SEVERITY_KEY = ['fields','customfield_10009','value']
+#    SUMMARY_KEY = ['fields', 'summary']
+#    ISSUE_KEY = ['key']
+
+#    def __init__(self, *args, **kwargs):
+#        DashieSampler.__init__(self, *args, **kwargs)
+
+#    def name(self):
+#        return 'querytest'
+
+#    def _findByKey(self, val, keys):
+
+#        if len(keys) == 0:
+#            return val
+
+#        return self._findByKey(val[keys[0]], keys[1:])
+
+#    def _parseRequest(self, json):
+
+#        return {
+#            'label': self._findByKey(json, self.ISSUE_KEY),
+#            'value': self._findByKey(json, self.SUMMARY_KEY),
+#            'importanceLabel': self._findByKey(json, self.SEVERITY_KEY),
+#            'importanceValue': random.choice([1,2,3])
+#       }
+
+#    def sample(self):
+#        r = requests.get('http://localhost:8080/jira/jira_dashboard.json', auth=('user', 'pass'))           
+#        return {'items': [self._parseRequest(issue) for issue in r.json()['dashboards']]}
+
+
+
+       
+class TriageAssignedJiraSampler(DashieSampler):
+
+    SEVERITY_KEY = ['fields','customfield_10009','value']
+    SUMMARY_KEY = ['fields', 'summary']
+    ISSUE_KEY = ['key']
+
+    def __init__(self, *args, **kwargs):
+        DashieSampler.__init__(self, *args, **kwargs)
+
+    def name(self):
+        return 'triageassigned'
+
+    def _findByKey(self, val, keys):
+
+        if len(keys) == 0:
+            return val
+            
+        #print val[keys[0]], keys[1:]
+
+        return self._findByKey(val[keys[0]], keys[1:])
+
+    def _parseRequest(self, json):
+
+        return {
+            'label': self._findByKey(json, self.ISSUE_KEY),
+            'value': self._findByKey(json, self.SUMMARY_KEY),
+            #'importanceLabel': self._findByKey(json, self.SEVERITY_KEY),
+            'importanceValue': random.choice([1,2,3])
+        }
+
+    def sample(self):
+#        r = requests.get('http://localhost:8080/jira/triage_assigned.json', auth=('user', 'pass'))
+        r = requests.get('http://localhost:8080/jira/jira_query.json', auth=('user', 'pass'))           
+        return {'items': [self._parseRequest(issue) for issue in r.json()['issues']]}
+
+
 
 class JenkinsSampler(DashieSampler):
 

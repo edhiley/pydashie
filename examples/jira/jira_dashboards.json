@@ -1,0 +1,128 @@
+{
+    "startAt": 0,
+    "maxResults": 20,
+    "total": 178,
+    "next": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard?startAt=20&maxResults=20",
+    "dashboards": [
+        {
+            "id": "11719",
+            "name": "ash",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11719",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11719"
+        },
+        {
+            "id": "12003",
+            "name": "Cell O",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/12003",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=12003"
+        },
+        {
+            "id": "11830",
+            "name": "Cherwell Problem Records",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11830",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11830"
+        },
+        {
+            "id": "11223",
+            "name": "Core Message",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11223",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11223"
+        },
+        {
+            "id": "11718",
+            "name": "CP-IS Defects Dashboard",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11718",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11718"
+        },
+        {
+            "id": "11841",
+            "name": "Current Release",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11841",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11841"
+        },
+        {
+            "id": "11847",
+            "name": "Current Release r.3.0.0",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11847",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11847"
+        },
+        {
+            "id": "11919",
+            "name": "Current Release r.3.1.0",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11919",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11919"
+        },
+        {
+            "id": "11933",
+            "name": "Current release r.3.2.0",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11933",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11933"
+        },
+        {
+            "id": "11949",
+            "name": "Current Release r.3.3.0",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11949",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11949"
+        },
+        {
+            "id": "11962",
+            "name": "Current Release r.3.4.0",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11962",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11962"
+        },
+        {
+            "id": "11964",
+            "name": "Current Release r.4.0.0",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11964",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11964"
+        },
+        {
+            "id": "12008",
+            "name": "Current Release r.4.1.0",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/12008",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=12008"
+        },
+        {
+            "id": "11226",
+            "name": "Data Migration",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11226",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11226"
+        },
+        {
+            "id": "11815",
+            "name": "Data Migration",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11815",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11815"
+        },
+        {
+            "id": "11214",
+            "name": "Demographic Defect Dashboard",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11214",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11214"
+        },
+        {
+            "id": "11011",
+            "name": "Demographic Spine Application Defects",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11011",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11011"
+        },
+        {
+            "id": "11404",
+            "name": "DSA Dashboard",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11404",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11404"
+        },
+        {
+            "id": "11102",
+            "name": "DSA Defects",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11102",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11102"
+        },
+        {
+            "id": "11710",
+            "name": "DSA Defects",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/dashboard/11710",
+            "view": "https://nhss-jira.bjss.co.uk/secure/Dashboard.jspa?selectPageId=11710"
+        }
+    ]
+}
