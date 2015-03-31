@@ -7,7 +7,7 @@ import collections
 #### NEWLY ADDED ####
 
 
-class QueryTestJiraSampler(DashieSampler):
+""""class QueryTestJiraSampler(DashieSampler):
 
     SEVERITY_KEY = ['fields','customfield_10009','value']
     SUMMARY_KEY = ['fields', 'summary']
@@ -39,7 +39,7 @@ class QueryTestJiraSampler(DashieSampler):
         r = requests.get('http://localhost:8080/jira/jira_query.json', auth=('user', 'pass'))           
         return {'items': [self._parseRequest(issue) for issue in r.json()['issues']]}
 
-
+"""
 #### NEWLY ADDED ####
 
 #class JiraDashboardSampler(DashieSampler):
@@ -77,7 +77,7 @@ class QueryTestJiraSampler(DashieSampler):
 
 
        
-class TriageAssignedJiraSampler(DashieSampler):
+class ActiveIncidentsJiraSampler(DashieSampler):
 
     SEVERITY_KEY = ['fields','customfield_10009','value']
     SUMMARY_KEY = ['fields', 'summary']
@@ -87,7 +87,7 @@ class TriageAssignedJiraSampler(DashieSampler):
         DashieSampler.__init__(self, *args, **kwargs)
 
     def name(self):
-        return 'triageassigned'
+        return 'activeincidents'
 
     def _findByKey(self, val, keys):
 
@@ -109,7 +109,7 @@ class TriageAssignedJiraSampler(DashieSampler):
 
     def sample(self):
 #        r = requests.get('http://localhost:8080/jira/triage_assigned.json', auth=('user', 'pass'))
-        r = requests.get('http://localhost:8080/jira/jira_query.json', auth=('user', 'pass'))           
+        r = requests.get('http://localhost:8080/jira/jira_active_incidents.json', auth=('user', 'pass'))           
         return {'items': [self._parseRequest(issue) for issue in r.json()['issues']]}
 
 

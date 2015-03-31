@@ -1,0 +1,912 @@
+{
+    "expand": "schema,names",
+    "startAt": 0,
+    "maxResults": 50,
+    "total": 5,
+    "issues": [
+        {
+            "expand": "editmeta,renderedFields,transitions,changelog,operations",
+            "id": "27464",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issue/27464",
+            "key": "SPII-15795",
+            "fields": {
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "summary": "No files returning when submitting DBS files.",
+                "issuetype": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issuetype/10101",
+                    "id": "10101",
+                    "description": "Either Cherwell Incidents or HPSM Incidents",
+                    "iconUrl": "https://nhss-jira.bjss.co.uk/images/icons/issuetypes/newfeature.png",
+                    "name": "Incident",
+                    "subtask": false
+                },
+                "timespent": null,
+                "reporter": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/user?username=lee.proctor",
+                    "name": "lee.proctor",
+                    "emailAddress": "lee.proctor@bjss.com",
+                    "avatarUrls": {
+                        "16x16": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=xsmall&avatarId=10122",
+                        "24x24": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=small&avatarId=10122",
+                        "32x32": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=medium&avatarId=10122",
+                        "48x48": "https://nhss-jira.bjss.co.uk/secure/useravatar?avatarId=10122"
+                    },
+                    "displayName": "Lee Proctor",
+                    "active": true
+                },
+                "updated": "2015-03-31T14:00:12.000+0100",
+                "created": "2015-03-31T12:20:50.000+0100",
+                "customfield_10817": null,
+                "priority": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/priority/4",
+                    "iconUrl": "https://nhss-jira.bjss.co.uk/images/icons/priorities/minor.png",
+                    "name": "Low",
+                    "id": "4"
+                },
+                "description": "No files returning when submitting DBS files.\r\n    \r\nCaller has checked the logs which state the data has downloaded correctly however there are no returned files.\r\n    \r\nHe has tried running the batch traces manually, when uploading files receives the receipt ok but no file returns.  Tried rebooting the machine.\r\n    \r\nStarted around 3 weeks ago.\r\n",
+                "customfield_10812": null,
+                "customfield_10813": null,
+                "issuelinks": [],
+                "customfield_10004": "9223372036854775807",
+                "customfield_10815": null,
+                "customfield_10811": null,
+                "subtasks": [],
+                "customfield_10009": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10004",
+                    "value": "4 Minor",
+                    "id": "10004"
+                },
+                "status": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/status/3",
+                    "description": "This issue is being actively worked on at the moment by the assignee.",
+                    "iconUrl": "https://nhss-jira.bjss.co.uk/images/icons/statuses/inprogress.png",
+                    "name": "In Progress",
+                    "id": "3"
+                },
+                "customfield_10006": null,
+                "customfield_10005": null,
+                "labels": [],
+                "workratio": -1,
+                "project": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "SPII",
+                    "name": "Spine II",
+                    "avatarUrls": {
+                        "16x16": "https://nhss-jira.bjss.co.uk/secure/projectavatar?size=xsmall&pid=10000&avatarId=10011",
+                        "24x24": "https://nhss-jira.bjss.co.uk/secure/projectavatar?size=small&pid=10000&avatarId=10011",
+                        "32x32": "https://nhss-jira.bjss.co.uk/secure/projectavatar?size=medium&pid=10000&avatarId=10011",
+                        "48x48": "https://nhss-jira.bjss.co.uk/secure/projectavatar?pid=10000&avatarId=10011"
+                    }
+                },
+                "customfield_10829": null,
+                "customfield_10827": null,
+                "customfield_10828": null,
+                "customfield_10825": "2015-03-27T10:00:00.000+0000",
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "lastViewed": null,
+                "customfield_10826": 744094,
+                "customfield_10824": null,
+                "timeoriginalestimate": null,
+                "customfield_10900": null,
+                "customfield_10820": null,
+                "customfield_10901": "0|i02n2v:",
+                "votes": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issue/SPII-15795/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                },
+                "customfield_10402": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10508",
+                    "value": "Unknown",
+                    "id": "10508"
+                },
+                "customfield_10401": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10505",
+                    "value": "Unknown",
+                    "id": "10505"
+                },
+                "customfield_11100": null,
+                "fixVersions": [],
+                "resolution": null,
+                "resolutiondate": null,
+                "customfield_10831": null,
+                "aggregatetimeoriginalestimate": null,
+                "customfield_10832": null,
+                "customfield_11001": null,
+                "customfield_11000": null,
+                "watches": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issue/SPII-15795/watchers",
+                    "watchCount": 1,
+                    "isWatching": false
+                },
+                "customfield_10106": null,
+                "customfield_10602": null,
+                "assignee": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/user?username=lynn.marwood",
+                    "name": "lynn.marwood",
+                    "emailAddress": "lynn.marwood@hscic.gov.uk",
+                    "avatarUrls": {
+                        "16x16": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=xsmall&avatarId=10122",
+                        "24x24": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=small&avatarId=10122",
+                        "32x32": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=medium&avatarId=10122",
+                        "48x48": "https://nhss-jira.bjss.co.uk/secure/useravatar?avatarId=10122"
+                    },
+                    "displayName": "Lynn Marwood",
+                    "active": true
+                },
+                "customfield_10200": null,
+                "aggregatetimeestimate": null,
+                "customfield_10807": null,
+                "customfield_10808": null,
+                "customfield_11030": null,
+                "customfield_10805": [
+                    {
+                        "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/11001",
+                        "value": "live",
+                        "id": "11001"
+                    }
+                ],
+                "customfield_10806": null,
+                "customfield_10700": null,
+                "customfield_10701": null,
+                "customfield_10400": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10502",
+                    "value": "Unknown",
+                    "id": "10502"
+                },
+                "customfield_10809": [
+                    {
+                        "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/11023",
+                        "value": "core-dbs",
+                        "id": "11023"
+                    }
+                ],
+                "timeestimate": null,
+                "customfield_10300": "120217",
+                "customfield_10301": null,
+                "aggregatetimespent": null
+            }
+        },
+        {
+            "expand": "editmeta,renderedFields,transitions,changelog,operations",
+            "id": "27458",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issue/27458",
+            "key": "SPII-15789",
+            "fields": {
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "summary": "The maternity ward has not received a birth notification for baby nhs no: 7128178414.",
+                "issuetype": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issuetype/10101",
+                    "id": "10101",
+                    "description": "Either Cherwell Incidents or HPSM Incidents",
+                    "iconUrl": "https://nhss-jira.bjss.co.uk/images/icons/issuetypes/newfeature.png",
+                    "name": "Incident",
+                    "subtask": false
+                },
+                "timespent": null,
+                "reporter": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/user?username=lee.proctor",
+                    "name": "lee.proctor",
+                    "emailAddress": "lee.proctor@bjss.com",
+                    "avatarUrls": {
+                        "16x16": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=xsmall&avatarId=10122",
+                        "24x24": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=small&avatarId=10122",
+                        "32x32": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=medium&avatarId=10122",
+                        "48x48": "https://nhss-jira.bjss.co.uk/secure/useravatar?avatarId=10122"
+                    },
+                    "displayName": "Lee Proctor",
+                    "active": true
+                },
+                "updated": "2015-03-31T15:25:34.000+0100",
+                "created": "2015-03-31T11:31:45.000+0100",
+                "customfield_10817": null,
+                "priority": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/priority/4",
+                    "iconUrl": "https://nhss-jira.bjss.co.uk/images/icons/priorities/minor.png",
+                    "name": "Low",
+                    "id": "4"
+                },
+                "description": "The maternity ward has not received a birth notification for baby nhs no: 7128178414.\r\n    \r\n    The baby passed away on the day it was born, this may have caused the issue.\r\n",
+                "customfield_10812": null,
+                "customfield_10813": null,
+                "issuelinks": [],
+                "customfield_10004": "9223372036854775807",
+                "customfield_10815": null,
+                "customfield_10811": null,
+                "subtasks": [],
+                "customfield_10009": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10004",
+                    "value": "4 Minor",
+                    "id": "10004"
+                },
+                "status": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/status/3",
+                    "description": "This issue is being actively worked on at the moment by the assignee.",
+                    "iconUrl": "https://nhss-jira.bjss.co.uk/images/icons/statuses/inprogress.png",
+                    "name": "In Progress",
+                    "id": "3"
+                },
+                "customfield_10006": null,
+                "customfield_10005": null,
+                "labels": [],
+                "workratio": -1,
+                "project": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "SPII",
+                    "name": "Spine II",
+                    "avatarUrls": {
+                        "16x16": "https://nhss-jira.bjss.co.uk/secure/projectavatar?size=xsmall&pid=10000&avatarId=10011",
+                        "24x24": "https://nhss-jira.bjss.co.uk/secure/projectavatar?size=small&pid=10000&avatarId=10011",
+                        "32x32": "https://nhss-jira.bjss.co.uk/secure/projectavatar?size=medium&pid=10000&avatarId=10011",
+                        "48x48": "https://nhss-jira.bjss.co.uk/secure/projectavatar?pid=10000&avatarId=10011"
+                    }
+                },
+                "customfield_10829": null,
+                "customfield_10827": null,
+                "customfield_10828": null,
+                "customfield_10825": "2015-03-27T09:00:00.000+0000",
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "lastViewed": null,
+                "customfield_10826": 744432,
+                "customfield_10824": null,
+                "timeoriginalestimate": null,
+                "customfield_10900": null,
+                "customfield_10820": null,
+                "customfield_10901": "0|i02n1j:",
+                "votes": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issue/SPII-15789/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                },
+                "customfield_10402": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10508",
+                    "value": "Unknown",
+                    "id": "10508"
+                },
+                "customfield_10401": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10505",
+                    "value": "Unknown",
+                    "id": "10505"
+                },
+                "customfield_11100": null,
+                "fixVersions": [],
+                "resolution": null,
+                "resolutiondate": null,
+                "customfield_10831": null,
+                "aggregatetimeoriginalestimate": null,
+                "customfield_10832": null,
+                "customfield_11001": null,
+                "customfield_11000": null,
+                "watches": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issue/SPII-15789/watchers",
+                    "watchCount": 2,
+                    "isWatching": false
+                },
+                "customfield_10106": null,
+                "customfield_10602": null,
+                "assignee": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/user?username=Incident.Manager",
+                    "name": "Incident.Manager",
+                    "emailAddress": "lee.proctor@bjss.com",
+                    "avatarUrls": {
+                        "16x16": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=xsmall&avatarId=10122",
+                        "24x24": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=small&avatarId=10122",
+                        "32x32": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=medium&avatarId=10122",
+                        "48x48": "https://nhss-jira.bjss.co.uk/secure/useravatar?avatarId=10122"
+                    },
+                    "displayName": "Incident Manager",
+                    "active": true
+                },
+                "customfield_10200": null,
+                "aggregatetimeestimate": null,
+                "customfield_10807": null,
+                "customfield_10808": null,
+                "customfield_11030": null,
+                "customfield_10805": [
+                    {
+                        "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/11001",
+                        "value": "live",
+                        "id": "11001"
+                    }
+                ],
+                "customfield_10806": null,
+                "customfield_10700": null,
+                "customfield_10701": null,
+                "customfield_10400": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10502",
+                    "value": "Unknown",
+                    "id": "10502"
+                },
+                "customfield_10809": [
+                    {
+                        "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/11011",
+                        "value": "core-demographics",
+                        "id": "11011"
+                    }
+                ],
+                "timeestimate": null,
+                "customfield_10300": "120311",
+                "customfield_10301": null,
+                "aggregatetimespent": null
+            }
+        },
+        {
+            "expand": "editmeta,renderedFields,transitions,changelog,operations",
+            "id": "27437",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issue/27437",
+            "key": "SPII-15768",
+            "fields": {
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "summary": "When trying to export from BNA in to a spreadsheet, it comes up with an error of: \"sorry, there was a problem carrying out your request\" and then some further coding appears.",
+                "issuetype": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issuetype/10101",
+                    "id": "10101",
+                    "description": "Either Cherwell Incidents or HPSM Incidents",
+                    "iconUrl": "https://nhss-jira.bjss.co.uk/images/icons/issuetypes/newfeature.png",
+                    "name": "Incident",
+                    "subtask": false
+                },
+                "timespent": null,
+                "reporter": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/user?username=lee.proctor",
+                    "name": "lee.proctor",
+                    "emailAddress": "lee.proctor@bjss.com",
+                    "avatarUrls": {
+                        "16x16": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=xsmall&avatarId=10122",
+                        "24x24": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=small&avatarId=10122",
+                        "32x32": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=medium&avatarId=10122",
+                        "48x48": "https://nhss-jira.bjss.co.uk/secure/useravatar?avatarId=10122"
+                    },
+                    "displayName": "Lee Proctor",
+                    "active": true
+                },
+                "updated": "2015-03-31T09:48:52.000+0100",
+                "created": "2015-03-27T10:53:04.000+0000",
+                "customfield_10817": "_r400_blockingFixesBranch032",
+                "priority": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/priority/4",
+                    "iconUrl": "https://nhss-jira.bjss.co.uk/images/icons/priorities/minor.png",
+                    "name": "Low",
+                    "id": "4"
+                },
+                "description": "When trying to export from BNA in to a spreadsheet, it comes up with an error of: \"sorry, there was a problem carrying out your request\" and then some further coding appears.\r\n",
+                "customfield_10812": null,
+                "customfield_10813": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/11028",
+                    "value": "<p style=\"padding: 2px; text-align: center; color: white; background-color: green\">agreed</p>",
+                    "id": "11028"
+                },
+                "issuelinks": [],
+                "customfield_10004": "9223372036854775807",
+                "customfield_10815": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/user?username=priyam.maheshwari",
+                    "name": "priyam.maheshwari",
+                    "emailAddress": "priyam.maheshwari@bjss.com",
+                    "avatarUrls": {
+                        "16x16": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=xsmall&avatarId=10122",
+                        "24x24": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=small&avatarId=10122",
+                        "32x32": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=medium&avatarId=10122",
+                        "48x48": "https://nhss-jira.bjss.co.uk/secure/useravatar?avatarId=10122"
+                    },
+                    "displayName": "Priyam Maheshwari",
+                    "active": true
+                },
+                "customfield_10811": null,
+                "subtasks": [],
+                "customfield_10009": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10004",
+                    "value": "4 Minor",
+                    "id": "10004"
+                },
+                "status": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/status/10008",
+                    "description": "Resolution needs to be reviewed prior to issue close",
+                    "iconUrl": "https://nhss-jira.bjss.co.uk/images/icons/statuses/resolved.png",
+                    "name": "Peer Review",
+                    "id": "10008"
+                },
+                "customfield_10006": null,
+                "customfield_10005": null,
+                "labels": [
+                    "LP-Flagged"
+                ],
+                "workratio": -1,
+                "project": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "SPII",
+                    "name": "Spine II",
+                    "avatarUrls": {
+                        "16x16": "https://nhss-jira.bjss.co.uk/secure/projectavatar?size=xsmall&pid=10000&avatarId=10011",
+                        "24x24": "https://nhss-jira.bjss.co.uk/secure/projectavatar?size=small&pid=10000&avatarId=10011",
+                        "32x32": "https://nhss-jira.bjss.co.uk/secure/projectavatar?size=medium&pid=10000&avatarId=10011",
+                        "48x48": "https://nhss-jira.bjss.co.uk/secure/projectavatar?pid=10000&avatarId=10011"
+                    }
+                },
+                "customfield_10829": null,
+                "customfield_10827": null,
+                "customfield_10828": null,
+                "customfield_10825": "2015-03-27T09:00:00.000+0000",
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "lastViewed": null,
+                "customfield_10826": 744090,
+                "customfield_10824": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/11066",
+                    "value": "hotfix (hotfix approach applied to the Release that is currently Live)",
+                    "id": "11066"
+                },
+                "timeoriginalestimate": null,
+                "customfield_10900": null,
+                "customfield_10820": null,
+                "customfield_10901": "0|i02mwv:",
+                "votes": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issue/SPII-15768/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                },
+                "customfield_10402": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10508",
+                    "value": "Unknown",
+                    "id": "10508"
+                },
+                "customfield_10401": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10505",
+                    "value": "Unknown",
+                    "id": "10505"
+                },
+                "customfield_11100": null,
+                "fixVersions": [],
+                "resolution": null,
+                "resolutiondate": null,
+                "customfield_10831": null,
+                "aggregatetimeoriginalestimate": null,
+                "customfield_10832": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/11094",
+                    "value": "<p style=\"padding: 2px; text-align: center; background-color: lightgreen;\">green-ish build (known failures)</p>",
+                    "id": "11094"
+                },
+                "customfield_11001": null,
+                "customfield_11000": null,
+                "watches": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issue/SPII-15768/watchers",
+                    "watchCount": 2,
+                    "isWatching": false
+                },
+                "customfield_10106": null,
+                "customfield_10602": "current",
+                "assignee": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/user?username=bob.walker",
+                    "name": "bob.walker",
+                    "emailAddress": "bob.walker@bjss.com",
+                    "avatarUrls": {
+                        "16x16": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=xsmall&avatarId=10122",
+                        "24x24": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=small&avatarId=10122",
+                        "32x32": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=medium&avatarId=10122",
+                        "48x48": "https://nhss-jira.bjss.co.uk/secure/useravatar?avatarId=10122"
+                    },
+                    "displayName": "Bob Walker",
+                    "active": true
+                },
+                "customfield_10200": null,
+                "aggregatetimeestimate": null,
+                "customfield_10807": null,
+                "customfield_10808": null,
+                "customfield_11030": null,
+                "customfield_10805": [
+                    {
+                        "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/11001",
+                        "value": "live",
+                        "id": "11001"
+                    }
+                ],
+                "customfield_10806": null,
+                "customfield_10700": null,
+                "customfield_10701": null,
+                "customfield_10400": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10502",
+                    "value": "Unknown",
+                    "id": "10502"
+                },
+                "customfield_10809": [
+                    {
+                        "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/11014",
+                        "value": "gui-scra",
+                        "id": "11014"
+                    }
+                ],
+                "timeestimate": null,
+                "customfield_10300": "120216",
+                "customfield_10301": null,
+                "aggregatetimespent": null
+            }
+        },
+        {
+            "expand": "editmeta,renderedFields,transitions,changelog,operations",
+            "id": "27408",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issue/27408",
+            "key": "SPII-15739",
+            "fields": {
+                "progress": {
+                    "progress": 86400,
+                    "total": 115200,
+                    "percent": 75
+                },
+                "summary": "CP-IS Acknowledgement Response Files Produced are Schema Invalid for Failed Records",
+                "issuetype": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issuetype/10101",
+                    "id": "10101",
+                    "description": "Either Cherwell Incidents or HPSM Incidents",
+                    "iconUrl": "https://nhss-jira.bjss.co.uk/images/icons/issuetypes/newfeature.png",
+                    "name": "Incident",
+                    "subtask": false
+                },
+                "timespent": 86400,
+                "reporter": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/user?username=sa.emt",
+                    "name": "sa.emt",
+                    "emailAddress": "solutionassurancedefectmanagement@nhs.net",
+                    "avatarUrls": {
+                        "16x16": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=xsmall&avatarId=10122",
+                        "24x24": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=small&avatarId=10122",
+                        "32x32": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=medium&avatarId=10122",
+                        "48x48": "https://nhss-jira.bjss.co.uk/secure/useravatar?avatarId=10122"
+                    },
+                    "displayName": "Solution assurance EMT",
+                    "active": true
+                },
+                "updated": "2015-03-27T14:46:06.000+0000",
+                "created": "2015-03-24T13:50:14.000+0000",
+                "customfield_10817": null,
+                "priority": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/priority/4",
+                    "iconUrl": "https://nhss-jira.bjss.co.uk/images/icons/priorities/minor.png",
+                    "name": "Low",
+                    "id": "4"
+                },
+                "description": "A defect has been identified with the CP-IS Client whereby the CP-IS Local Authority Acknowledgement Response (REPC_MT000003GB01) files that are returned are not always schema valid. The problem occurs where the record has not been accepted by the CP-IS Client for any reason and an invalidCP-ISRecord is returned in the file. When an invalidCP-ISRecord is returned the record is missing the “pertinentInformation” element.\r\n\r\nThis issue has been identified whilst Integration Testing with the Local Authority System Suppliers in the Spine2 INT environment but this is an issue with the LIVE CP-IS Client.",
+                "customfield_10812": null,
+                "customfield_10813": null,
+                "issuelinks": [],
+                "customfield_10004": "9223372036854775807",
+                "customfield_10815": null,
+                "customfield_10811": null,
+                "subtasks": [],
+                "customfield_10009": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10003",
+                    "value": "3 Important",
+                    "id": "10003"
+                },
+                "status": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/status/3",
+                    "description": "This issue is being actively worked on at the moment by the assignee.",
+                    "iconUrl": "https://nhss-jira.bjss.co.uk/images/icons/statuses/inprogress.png",
+                    "name": "In Progress",
+                    "id": "3"
+                },
+                "customfield_10006": null,
+                "customfield_10005": null,
+                "labels": [],
+                "workratio": -1,
+                "project": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "SPII",
+                    "name": "Spine II",
+                    "avatarUrls": {
+                        "16x16": "https://nhss-jira.bjss.co.uk/secure/projectavatar?size=xsmall&pid=10000&avatarId=10011",
+                        "24x24": "https://nhss-jira.bjss.co.uk/secure/projectavatar?size=small&pid=10000&avatarId=10011",
+                        "32x32": "https://nhss-jira.bjss.co.uk/secure/projectavatar?size=medium&pid=10000&avatarId=10011",
+                        "48x48": "https://nhss-jira.bjss.co.uk/secure/projectavatar?pid=10000&avatarId=10011"
+                    }
+                },
+                "customfield_10829": null,
+                "customfield_10827": null,
+                "customfield_10828": null,
+                "customfield_10825": "2015-03-24T10:44:00.000+0000",
+                "aggregateprogress": {
+                    "progress": 86400,
+                    "total": 115200,
+                    "percent": 75
+                },
+                "lastViewed": "2015-03-27T15:12:18.859+0000",
+                "customfield_10826": null,
+                "customfield_10824": null,
+                "timeoriginalestimate": null,
+                "customfield_10900": null,
+                "customfield_10820": null,
+                "customfield_10901": "0|i02mqf:",
+                "votes": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issue/SPII-15739/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                },
+                "customfield_10402": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10508",
+                    "value": "Unknown",
+                    "id": "10508"
+                },
+                "customfield_10401": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10505",
+                    "value": "Unknown",
+                    "id": "10505"
+                },
+                "customfield_11100": null,
+                "fixVersions": [],
+                "resolution": null,
+                "resolutiondate": null,
+                "customfield_10831": null,
+                "aggregatetimeoriginalestimate": null,
+                "customfield_10832": null,
+                "customfield_11001": null,
+                "customfield_11000": null,
+                "watches": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issue/SPII-15739/watchers",
+                    "watchCount": 1,
+                    "isWatching": false
+                },
+                "customfield_10106": null,
+                "customfield_10602": null,
+                "assignee": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/user?username=andy.bowes",
+                    "name": "andy.bowes",
+                    "emailAddress": "andy.bowes@bjss.com",
+                    "avatarUrls": {
+                        "16x16": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=xsmall&ownerId=andy.bowes&avatarId=10700",
+                        "24x24": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=small&ownerId=andy.bowes&avatarId=10700",
+                        "32x32": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=medium&ownerId=andy.bowes&avatarId=10700",
+                        "48x48": "https://nhss-jira.bjss.co.uk/secure/useravatar?ownerId=andy.bowes&avatarId=10700"
+                    },
+                    "displayName": "Andy Bowes",
+                    "active": true
+                },
+                "customfield_10200": null,
+                "aggregatetimeestimate": 28800,
+                "customfield_10807": null,
+                "customfield_10808": null,
+                "customfield_11030": null,
+                "customfield_10805": [
+                    {
+                        "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/11002",
+                        "value": "int",
+                        "id": "11002"
+                    }
+                ],
+                "customfield_10806": null,
+                "customfield_10700": "4.0.0.5",
+                "customfield_10701": null,
+                "customfield_10400": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10502",
+                    "value": "Unknown",
+                    "id": "10502"
+                },
+                "customfield_10809": [
+                    {
+                        "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/11021",
+                        "value": "client-cpis",
+                        "id": "11021"
+                    }
+                ],
+                "timeestimate": 28800,
+                "customfield_10300": "IM114295",
+                "customfield_10301": null,
+                "aggregatetimespent": 86400
+            }
+        },
+        {
+            "expand": "editmeta,renderedFields,transitions,changelog,operations",
+            "id": "27405",
+            "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issue/27405",
+            "key": "SPII-15736",
+            "fields": {
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "summary": "Non NBO organisations not showing correct org types on DSA.",
+                "issuetype": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issuetype/10101",
+                    "id": "10101",
+                    "description": "Either Cherwell Incidents or HPSM Incidents",
+                    "iconUrl": "https://nhss-jira.bjss.co.uk/images/icons/issuetypes/newfeature.png",
+                    "name": "Incident",
+                    "subtask": false
+                },
+                "timespent": null,
+                "reporter": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/user?username=lee.proctor",
+                    "name": "lee.proctor",
+                    "emailAddress": "lee.proctor@bjss.com",
+                    "avatarUrls": {
+                        "16x16": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=xsmall&avatarId=10122",
+                        "24x24": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=small&avatarId=10122",
+                        "32x32": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=medium&avatarId=10122",
+                        "48x48": "https://nhss-jira.bjss.co.uk/secure/useravatar?avatarId=10122"
+                    },
+                    "displayName": "Lee Proctor",
+                    "active": true
+                },
+                "updated": "2015-03-31T12:19:16.000+0100",
+                "created": "2015-03-24T11:33:58.000+0000",
+                "customfield_10817": "_r400_blockingFixesBranch034",
+                "priority": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/priority/4",
+                    "iconUrl": "https://nhss-jira.bjss.co.uk/images/icons/priorities/minor.png",
+                    "name": "Low",
+                    "id": "4"
+                },
+                "description": "Allocations made using DSA by non-NBO organisations do not have the correct organisation and registering authority types recorded.\r\n\r\nUser's Name\r\n    Jane STEWART\r\n<##eof##>\r\n\r\nUser's phone\r\n    0113 397 4357\r\n<##eof##>\r\n\r\nUser's email\r\n    jane.stewart4@nhs.net\r\n<##eof##>\r\n\r\nUser's UUID (Smartcard ID)\r\n    536201248567\r\n<##eof##>\r\n\r\nHospital / Site\r\n    [X26] Health And Social Care Information Centre\r\n<##eof##>\r\n\r\nSteps to Recreate the Incident - How did I get here? \r\n    Non-NBO user at Northern Lincolnshire and Goole (RJL) with access to DSA Allocates an NHS Number. When this Allocation is viewed in the PDS Allocations report it has a Registering Organisation of XDC and a Registering Authority Type of 'I'. NHS Number example 7125469477 allocated on 23/01/2015 at 10:01. The end user at the trust is not affected because they can use the NHS Number returned, however, it affects monitoring of Trust Allocations by PDS NBO because the organisation and registering authority type is not recorded correctly.\r\n<##eof##>\r\n\r\nWhat steps have been taken so far to resolve the incident \r\n    This NIN. Checked DSA business requirements which state Cross organisation access will now be supported and reportable.\r\n<##eof##>\r\n\r\nJustification of Impact\r\n    The impact is that allocations made by organisations using DSA that are non-NBO will not have allocations monitored because they are not recorded correctly. In the Allocations report NBO will not monitor allocations showing against NBO type 'I'. This means that duplicates may be created. \r\n<##eof##>\r\n",
+                "customfield_10812": null,
+                "customfield_10813": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/11028",
+                    "value": "<p style=\"padding: 2px; text-align: center; color: white; background-color: green\">agreed</p>",
+                    "id": "11028"
+                },
+                "issuelinks": [],
+                "customfield_10004": "9223372036854775807",
+                "customfield_10815": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/user?username=colinbateson",
+                    "name": "colinbateson",
+                    "emailAddress": "colin.bateson@bjss.com",
+                    "avatarUrls": {
+                        "16x16": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=xsmall&ownerId=colinbateson&avatarId=10904",
+                        "24x24": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=small&ownerId=colinbateson&avatarId=10904",
+                        "32x32": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=medium&ownerId=colinbateson&avatarId=10904",
+                        "48x48": "https://nhss-jira.bjss.co.uk/secure/useravatar?ownerId=colinbateson&avatarId=10904"
+                    },
+                    "displayName": "Colin Bateson",
+                    "active": true
+                },
+                "customfield_10811": null,
+                "subtasks": [],
+                "customfield_10009": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10004",
+                    "value": "4 Minor",
+                    "id": "10004"
+                },
+                "status": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/status/10019",
+                    "description": "The issue has been merged",
+                    "iconUrl": "https://nhss-jira.bjss.co.uk/images/icons/statuses/generic.png",
+                    "name": "Merged",
+                    "id": "10019"
+                },
+                "customfield_10006": null,
+                "customfield_10005": null,
+                "labels": [
+                    "LP-Flagged"
+                ],
+                "workratio": -1,
+                "project": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/project/10000",
+                    "id": "10000",
+                    "key": "SPII",
+                    "name": "Spine II",
+                    "avatarUrls": {
+                        "16x16": "https://nhss-jira.bjss.co.uk/secure/projectavatar?size=xsmall&pid=10000&avatarId=10011",
+                        "24x24": "https://nhss-jira.bjss.co.uk/secure/projectavatar?size=small&pid=10000&avatarId=10011",
+                        "32x32": "https://nhss-jira.bjss.co.uk/secure/projectavatar?size=medium&pid=10000&avatarId=10011",
+                        "48x48": "https://nhss-jira.bjss.co.uk/secure/projectavatar?pid=10000&avatarId=10011"
+                    }
+                },
+                "customfield_10829": null,
+                "customfield_10827": null,
+                "customfield_10828": null,
+                "customfield_10825": "2015-03-23T10:01:00.000+0000",
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "lastViewed": null,
+                "customfield_10826": 743478,
+                "customfield_10824": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/11066",
+                    "value": "hotfix (hotfix approach applied to the Release that is currently Live)",
+                    "id": "11066"
+                },
+                "timeoriginalestimate": null,
+                "customfield_10900": null,
+                "customfield_10820": null,
+                "customfield_10901": "0|i02mpr:",
+                "votes": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issue/SPII-15736/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                },
+                "customfield_10402": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10508",
+                    "value": "Unknown",
+                    "id": "10508"
+                },
+                "customfield_10401": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10505",
+                    "value": "Unknown",
+                    "id": "10505"
+                },
+                "customfield_11100": null,
+                "fixVersions": [],
+                "resolution": null,
+                "resolutiondate": null,
+                "customfield_10831": null,
+                "aggregatetimeoriginalestimate": null,
+                "customfield_10832": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/11095",
+                    "value": "<p style=\"padding: 2px; text-align: center; color: white; background-color: green;\">green build</p>",
+                    "id": "11095"
+                },
+                "customfield_11001": null,
+                "customfield_11000": null,
+                "watches": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/issue/SPII-15736/watchers",
+                    "watchCount": 3,
+                    "isWatching": false
+                },
+                "customfield_10106": null,
+                "customfield_10602": "current",
+                "assignee": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/user?username=james.morris",
+                    "name": "james.morris",
+                    "emailAddress": "james.morris@bjss.com",
+                    "avatarUrls": {
+                        "16x16": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=xsmall&avatarId=10122",
+                        "24x24": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=small&avatarId=10122",
+                        "32x32": "https://nhss-jira.bjss.co.uk/secure/useravatar?size=medium&avatarId=10122",
+                        "48x48": "https://nhss-jira.bjss.co.uk/secure/useravatar?avatarId=10122"
+                    },
+                    "displayName": "James Morris",
+                    "active": true
+                },
+                "customfield_10200": null,
+                "aggregatetimeestimate": null,
+                "customfield_10807": null,
+                "customfield_10808": null,
+                "customfield_11030": null,
+                "customfield_10805": [
+                    {
+                        "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/11001",
+                        "value": "live",
+                        "id": "11001"
+                    }
+                ],
+                "customfield_10806": null,
+                "customfield_10700": null,
+                "customfield_10701": null,
+                "customfield_10400": {
+                    "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/10502",
+                    "value": "Unknown",
+                    "id": "10502"
+                },
+                "customfield_10809": [
+                    {
+                        "self": "https://nhss-jira.bjss.co.uk/rest/api/2/customFieldOption/11015",
+                        "value": "gui-dsa",
+                        "id": "11015"
+                    }
+                ],
+                "timeestimate": null,
+                "customfield_10300": "120076",
+                "customfield_10301": null,
+                "aggregatetimespent": null
+            }
+        }
+    ]
+}
