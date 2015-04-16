@@ -9,6 +9,13 @@ class ActiveIncidentsJiraSampler(DashieSampler):
 
     SEVERITY_KEY = ['fields', 'customfield_10009', 'value']
     SUMMARY_KEY = ['fields', 'summary']
+    SEVERITY_MAP = {
+        '1 Critical': '6',
+        '2 Major': '7',
+        '3 Important': '8',
+        '4 Minor': '9',
+        '5 Low': '10',
+    }
     ISSUE_KEY = ['key']
 
     def __init__(self, *args, **kwargs):
@@ -27,14 +34,15 @@ class ActiveIncidentsJiraSampler(DashieSampler):
         return self._findByKey(val[keys[0]], keys[1:])
         
     def _parseRequest(self, json):
-
+        status = self._findByKey(json, self.SEVERITY_KEY)
+        
         return {
             'label': self._findByKey(json, self.ISSUE_KEY),
             'value': self._findByKey(json, self.SEVERITY_KEY),
             'value': self._findByKey(json, self.SUMMARY_KEY),
-            'importanceLabel': self._findByKey(json, self.SEVERITY_KEY),
-            'importanceValue': random.choice([1,2,3]) #Remove random colouring and replace with sev colour mapping alert 
-        }
+            'importanceLabel': self.SEVERITY_MAP[status],
+            'importanceValue': self.SEVERITY_MAP[status],
+          }
 
     def sample(self):
         #r = requests.get('http://localhost:8080/jira/triage_assigned.json', auth=('user', 'pass'))
@@ -47,34 +55,34 @@ class JenkinsSampler(DashieSampler):
     JOBS_KEY = ['name']
     STATUS_KEY = ['color']
     SEVERITY_MAP = {
-	    'red': '1',
-	    'notbuilt': '2',
-	    'blue_anime': '3',
-	    'blue': '4',
-	    'disabled': '5',
-	}
+        'red': '1',
+        'notbuilt': '2',
+        'blue_anime': '3',
+        'blue': '4',
+        'disabled': '5',
+    }
     SEVERITY_LABEL_MAP = {
-	    'red': 'Failed',
+        'red': 'Failed',
         'notbuilt': 'Not Built',
         'blue_anime': 'Building',
         'blue': 'Built',
         'disabled': 'Disabled',
-	
+    
       
-	}
+    }
     JOB_FILTER = ['spineii-main-caredatadownloader','spineii-main-ci','spineii-main-ci-latest-os-patches',\
-	'spineii-main-ci-latest-os-patches-ui','spineii-main-demographicspineapplication','spineii-main-everything'\
-	,'spineii-main-everything-sonar','spineii-main-operationsadminservice','spineii-main-overnight',\
-	'spineii-main-overnight-repeatable-tests','spineii-main-prescriptionsadmin','spineii-main-selfservice'\
-	,'spineii-main-sonar-all-projects','spineii-main-spinealertservice','spineii-main-spinereportingservice'\
-	,'spineii-main-summarycarerecord']
-	
-	
+    'spineii-main-ci-latest-os-patches-ui','spineii-main-demographicspineapplication','spineii-main-everything'\
+    ,'spineii-main-everything-sonar','spineii-main-operationsadminservice','spineii-main-overnight',\
+    'spineii-main-overnight-repeatable-tests','spineii-main-prescriptionsadmin','spineii-main-selfservice'\
+    ,'spineii-main-sonar-all-projects','spineii-main-spinealertservice','spineii-main-spinereportingservice'\
+    ,'spineii-main-summarycarerecord']
+    
+    
 
     def name(self):
         return 'jenkins'
-			
-			
+            
+            
     def __init__(self, *args, **kwargs):
         DashieSampler.__init__(self, *args, **kwargs)
  
@@ -91,21 +99,21 @@ class JenkinsSampler(DashieSampler):
         return jobName in self.JOB_FILTER
 
     def _parseRequest(self, json):
-		
+        
         status = self._findByKey(json, self.STATUS_KEY)
-		
+        
         jobName = self._findByKey(json, self.JOBS_KEY)
         
-        		
+                
         return {
             'label': self.SEVERITY_LABEL_MAP[status],
-			'value': self._findByKey(json, self.JOBS_KEY),
+            'value': self._findByKey(json, self.JOBS_KEY),
             'importanceLabel': self.SEVERITY_LABEL_MAP[status],
             'importanceValue': self.SEVERITY_MAP[status],
         }
 
     def sample(self):
-        r = requests.get('http://localhost:8080/jenkins/jenkins_example.json', auth=('user', 'pass'))
+        r = requests.get('http://nhss-aux.bjss.co.uk:8080/api/json?pretty=true', auth=('emma.holmes11', 'vertebrae'))
         jobs = r.json()['jobs']
         return {'items': [self._parseRequest(job) for job in jobs if self._jobFilter(job)]}
 
