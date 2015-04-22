@@ -4,17 +4,60 @@ import random
 import requests
 import collections
 
+#class ConfluenceMergeQueueSampler(DashieSampler):
+
+   #ID_KEY = ['fields', 'body', 'view', 'value']
+    #SUMMARY_KEY = ['fields', 'summary']
+    #SEVERITY_MAP = {
+      #  '1 Critical': '9',
+       # '2 Major': '10',
+       # '3 Important': '11',
+       # '4 Minor': '12',
+       # '5 Low': '13',
+   # }
+    #ISSUE_KEY = ['key']
+
+    #def __init__(self, *args, **kwargs):
+       # DashieSampler.__init__(self, *args, **kwargs)
+
+    #def name(self):
+     #   return 'mergequeue'
+
+    #def _findByKey(self, val, keys):
+
+      # if len(keys) == 0:
+          #  return val
+            
+        #print val[keys[0]], keys[1:]
+
+      #  return self._findByKey(val[keys[0]], keys[1:])
+        
+    #def _parseRequest(self, json):
+      #  status = self._findByKey(json, self.ID_KEY)
+        
+        #return {
+      #      'label': self._findByKey(json, self.ID_KEY),
+           # 'value': self._findByKey(json, self.SEVERITY_KEY),
+           # 'value': self._findByKey(json, self.SUMMARY_KEY),
+           # 'importanceLabel': self.SEVERITY_MAP[status],
+            #'importanceValue': self.SEVERITY_MAP[status],
+       #   }
+
+   # def sample(self):
+        #r = requests.get('http://localhost:8080/jira/triage_assigned.json', auth=('user', 'pass'))
+        #r = requests.get('http://localhost:8080/confluence/merge_queue.json', auth=('user', 'pass'))   
+        #return {'items': [self._parseRequest(issue) for issue in r.json()['id']]}
        
 class ActiveIncidentsJiraSampler(DashieSampler):
 
     SEVERITY_KEY = ['fields', 'customfield_10009', 'value']
     SUMMARY_KEY = ['fields', 'summary']
     SEVERITY_MAP = {
-        '1 Critical': '6',
-        '2 Major': '7',
-        '3 Important': '8',
-        '4 Minor': '9',
-        '5 Low': '10',
+        '1 Critical': '9',
+        '2 Major': '10',
+        '3 Important': '11',
+        '4 Minor': '12',
+        '5 Low': '13',
     }
     ISSUE_KEY = ['key']
 
@@ -60,6 +103,9 @@ class JenkinsSampler(DashieSampler):
         'blue_anime': '3',
         'blue': '4',
         'disabled': '5',
+		'yellow': '6',
+		'red_anime': '7',
+		'nobuilt_anime':'8'
     }
     SEVERITY_LABEL_MAP = {
         'red': 'Failed',
@@ -67,6 +113,9 @@ class JenkinsSampler(DashieSampler):
         'blue_anime': 'Building',
         'blue': 'Built',
         'disabled': 'Disabled',
+		'yellow': 'Unstable',
+		'red_anime':'Failed-In Progress',
+		'nobuilt_anime' : 'Not Built-In Progress',
     
       
     }

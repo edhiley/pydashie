@@ -1,0 +1,38 @@
+{
+    "id": "526148",
+    "type": "page",
+    "title": "Merge Queue",
+    "body": {
+        "view": {
+            "value": "/columnLayout single\" data-layout=\"single\">\n<div class=\"cell normal\" data-type=\"normal\">\n<div class=\"innerCell\">\n<h1 id=\"MergeQueue-RELEASE4.2(nextcutfromdevelop)\"><u>RELEASE 4.2 (next cut from develop)</u></h1><h2 id=\"MergeQueue-NextcutofRelease4.2developtorelease:TBC\">Next cut of Release 4.2 develop to release: <span style=\"color: rgb(255,0,0);\">TBC</span></h2><h2 id=\"MergeQueue-Release4.2MergeQueue\">Release 4.2 Merge Queue</h2><div class=\"table-wrap\"><table style=\"text-align: left;\" class=\"confluenceTable\"><tbody><tr><th style=\"text-align: left;\" class=\"confluenceTh\"><p>User</p></th><th style=\"text-align: left;\" class=\"confluenceTh\"><p>Change Description</p></th><th style=\"text-align: left;\" class=\"confluenceTh\"><p>Commit made?</p></th><th style=\"text-align: left;\" class=\"confluenceTh\"><p>Date/Time</p></th></tr><tr><td colspan=\"1\" class=\"confluenceTd\">Richard</td><td colspan=\"1\" class=\"confluenceTd\">improvements to care.data test SFTP server</td><td colspan=\"1\" class=\"confluenceTd\">Yes</td><td colspan=\"1\" class=\"confluenceTd\">16/04/2015 09:10</td></tr><tr><td colspan=\"1\" class=\"confluenceTd\">Â Sean</td><td colspan=\"1\" class=\"confluenceTd\">SPII-15714Â </td><td colspan=\"1\" class=\"confluenceTd\">Â No</td><td colspan=\"1\" class=\"confluenceTd\">Â 16/04/2015 09:17</td></tr></tbody></table></div><h2 id=\"MergeQueue-Release4.2OutofHoursMergeQueue(6pmto8amMon-Fri,Weekends)\">Release 4.2 Out of Hours Merge Queue (6pm to 8am Mon-Fri, Weekends)</h2><div class=\"table-wrap\"><table class=\"confluenceTable\"><tbody><tr><th style=\"text-align: left;\" class=\"confluenceTh\"><p>User</p></th><th style=\"text-align: left;\" class=\"confluenceTh\"><p>Change Description</p></th><th style=\"text-align: left;\" class=\"confluenceTh\"><p>Commit made?</p></th><th style=\"text-align: left;\" class=\"confluenceTh\"><p>Date/Time</p></th></tr></tbody></table></div></div>\n</div>\n</div>\n<div class=\"columnLayout single\" data-layout=\"single\">\n<div class=\"cell normal\" data-type=\"normal\">\n<div class=\"innerCell\">\n<p>Â </p><h2 id=\"MergeQueue-MergeProcess\">Merge Process</h2><ol><li>Once you have made changes and had a successful feature branch build add yourself to the bottom of the Merge queue</li><li>If you are second in the queue and the user at the top has indicated that the commit has been made then you can pre-empt step 3 and commence your feature branch build AT YOUR OWN RISK. Note that you will still need to run step 3 in full and step 4 if there are any further changes.</li><li>When you reach the top of the queue GRAB THE MONKEY andÂ <a href=\"/display/SPINE/Source+Control+Commands+Overview#SourceControlCommandsOverview-MergeFromDevelop\">update your local feature branch from origin/develop</a></li><li>Merge again from Develop to take the changes from previous people on the queue and execute feature branch build again<ol><li><span style=\"color: red;\"><strong>If your feature branch build fails you must take yourself off the top of the merge queue while you fix it, so you do not block the queue for everyone else.</strong></span></li></ol></li><li><a href=\"/display/SPINE/Source+Control+Commands+Overview#SourceControlCommandsOverview-MergeFromDevelop\">Merge changes back to origin/develop</a></li><li>Update the merge queue to indicate that the commit has been made</li><li>Once you have a succesful CI build remove yourself from the queue, notify the second-in-line and RELINQUISH THE MONKEY<br />Prior to comitting code to to the development branch ensure that someone else on the team has peer reviewed your code.</li></ol><p><strong>NB, If you are on the main merge queue and will have not completed your merge by 6pm then it is your responsibility to co-ordinate with those who are on the out of hours queue. Out of normal office hours this queue has priority.</strong></p><p><span style=\"color: red;\">Please don't hog the queue - if you are on the queue you should have a working code base; the only things that should delay you are merge conflicts during step 2.</span></p><p>Please refer toÂ <a href=\"/display/SPINE/Issues+Under+Investigation\">this page</a>Â if you experience build issues and update appropriately.</p><h2 id=\"MergeQueue-PointsofEtiquette\">Points of Etiquette</h2><ul><li><strong>Donâ€™t have multiple branches queued separately. </strong>If you have multiple things you want to merge in, please ensure these have been merged into a single feature branch first, so you can do a single merge, not one after another.</li><li><strong>Get things moving at 9am.</strong> If you are at the top of the merge queue at the start of the day you need to be ready, merge in any changes that may have hit develop from the overnight queue and kick off a feature branch build straight away at 9am, or preferably before this from home if possible.<ul><li>If there is a reason why you canâ€™t do this at 9am, please relinquish your spot Â at the top of the queue for the next person so they can take action at 9am.</li></ul></li><li><strong>Donâ€™t leave gaps between builds</strong>. While merging you must be responsive:<ul><li>As soon as your feature build finished, you should be taking action on the next step (e.g. merging and kicking off the CI build). Please try to predict when this will happen and make sure you donâ€™t leave a long delay.</li><li>If anything goes wrong and tests start failing on either feature or main builds, please donâ€™t wait until theyâ€™ve finished before youâ€™ve started investigating. A broken build holds up the queue, so the sooner you spot a problem and find a fix the better.</li><li>As soon as your merge is complete and the builds have succeeded make sure you update the merge queue and hand the monkey over so the next person can get on without delay.</li></ul></li><li><strong>Pre-empt your turn</strong>. If youâ€™re in the second slot on the merge queue, once the previous person has kicked off their main builds, merge from develop and kick off your feature builds. Doing this in parallel with the person before can save as much as 2 hours per person on the queue.</li><li><strong>Donâ€™t sit waiting for a build slot</strong>. When at the top of the merge queue, if the build farm is busy and youâ€™re struggling to get a slot to build your feature branch, you can use build prioritise. Please talk to your cell lead about how to do this. If youâ€™re really struggling to get a slot quickly, speak to me and weâ€™ll look at what builds are not essential.</li></ul><p>Â </p></div>\n</div>\n</div>\n</div>",
+            "representation": "view",
+            "_expandable": {
+                "content": "/rest/api/content/526148"
+            }
+        },
+        "_expandable": {
+            "editor": "",
+            "export_view": "",
+            "anonymous_export_view": "",
+            "storage": ""
+        }
+    },
+    "_links": {
+        "webui": "/display/SPINE/Merge+Queue",
+        "tinyui": "/x/RAcI",
+        "collection": "/rest/api/content",
+        "base": "https://nhss-confluence.bjss.co.uk",
+        "context": "",
+        "self": "https://nhss-confluence.bjss.co.uk/rest/api/content/526148"
+    },
+    "_expandable": {
+        "history": "/rest/api/content/526148/history",
+        "container": "",
+        "ancestors": "",
+        "children": "/rest/api/content/526148/child",
+        "descendants": "/rest/api/content/526148/descendant",
+        "space": "/rest/api/space/SPINE",
+        "version": "",
+        "metadata": ""
+    }
+}

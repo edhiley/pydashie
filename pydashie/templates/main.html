@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>{{title}}</title>
+  <title>Spine Dashboard</title>
 
   <!-- The javascript and css are managed by sprockets. The files can be found in the /assets folder-->
   <script type="text/javascript" src="/assets/application.js"></script>
   <link rel="stylesheet" href="/assets/application.css">
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
-  <link rel="icon" href="/assets/images/favicon.ico">
+  <link rel="icon" href="/assets/images/hscicicon.jpg">
 
 </head>
   <body>
@@ -21,7 +21,7 @@
       <div class="gridster">
   <ul>
     <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
-      <div data-id="welcome" data-view="Text" data-title="Current Release" data-text=" r.4.0.0.6.20150319105751" data-moreinfo=""></div>
+      <div data-id="welcome" data-view="Text" data-title="Current Release" data-text=" r.4.0.0.10.20150408184600" data-moreinfo=""></div>
     </li>
 
     <!--<li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
@@ -63,6 +63,11 @@
     <li data-row="1" data-col="5" data-sizex="1" data-sizey="2" >
          
           <div data-id="jenkins"  data-view="PriorityList" data-unordered="true" data-title="Jenkins" data-moreinfo="Status of main Jenkins builds"></div>
+    </li>
+	
+	 <li data-row="5" data-col="5" data-sizex="1" data-sizey="2" >
+         
+          <div data-id="mergequeue"  data-view="Merge Queue" data-unordered="true" data-title="Merge Que" data-moreinfo="Whos in the merge que"></div>
     </li>
     
 

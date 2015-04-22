@@ -7,6 +7,7 @@ def run(app, xyzzy):
         ConvergenceSampler(xyzzy, 1),
         ActiveIncidentsJiraSampler(xyzzy, 3),
         JenkinsSampler(xyzzy, 3),
+		#ConfluenceMergeQueueSampler(xyzzy,3),
     ]
 
     try:
