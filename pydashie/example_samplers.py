@@ -100,12 +100,13 @@ class JenkinsSampler(DashieSampler):
     SEVERITY_MAP = {
         'red': '1',
         'notbuilt': '2',
-        'blue_anime': '3',
-        'blue': '4',
+        'blue_anime': '11',
+        'blue': '11',
         'disabled': '5',
 		'yellow': '6',
 		'red_anime': '7',
-		'nobuilt_anime':'8'
+		'nobuilt_anime':'8',
+        'aborted':'9'
     }
     SEVERITY_LABEL_MAP = {
         'red': 'Failed',
@@ -116,8 +117,7 @@ class JenkinsSampler(DashieSampler):
 		'yellow': 'Unstable',
 		'red_anime':'Failed-In Progress',
 		'nobuilt_anime' : 'Not Built-In Progress',
-    
-      
+        'aborted' : 'Aborted'
     }
     JOB_FILTER = ['spineii-main-caredatadownloader','spineii-main-ci','spineii-main-ci-latest-os-patches',\
     'spineii-main-ci-latest-os-patches-ui','spineii-main-demographicspineapplication','spineii-main-everything'\
@@ -162,7 +162,7 @@ class JenkinsSampler(DashieSampler):
         }
 
     def sample(self):
-        r = requests.get('http://nhss-aux.bjss.co.uk:8080/api/json?pretty=true', auth=('emma.holmes11', 'vertebrae'))
+        r = requests.get('http://nhss-aux.bjss.co.uk:8080/api/json?pretty=true', auth=('matthew.puzey', 'vertebrae'))
         jobs = r.json()['jobs']
         return {'items': [self._parseRequest(job) for job in jobs if self._jobFilter(job)]}
 
