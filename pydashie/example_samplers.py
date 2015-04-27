@@ -105,7 +105,6 @@ class JenkinsSampler(DashieSampler):
         'disabled': '5',
 		'yellow': '6',
 		'red_anime': '7',
-		'nobuilt_anime':'8',
         'aborted':'9'
     }
     SEVERITY_LABEL_MAP = {
@@ -116,15 +115,10 @@ class JenkinsSampler(DashieSampler):
         'disabled': 'Disabled',
 		'yellow': 'Unstable',
 		'red_anime':'Failed-In Progress',
-		'nobuilt_anime' : 'Not Built-In Progress',
+		'notbuilt_anime' : 'Not Built-In Progress',
         'aborted' : 'Aborted'
     }
-    JOB_FILTER = ['spineii-main-caredatadownloader','spineii-main-ci','spineii-main-ci-latest-os-patches',\
-    'spineii-main-ci-latest-os-patches-ui','spineii-main-demographicspineapplication','spineii-main-everything'\
-    ,'spineii-main-everything-sonar','spineii-main-operationsadminservice','spineii-main-overnight',\
-    'spineii-main-overnight-repeatable-tests','spineii-main-prescriptionsadmin','spineii-main-selfservice'\
-    ,'spineii-main-sonar-all-projects','spineii-main-spinealertservice','spineii-main-spinereportingservice'\
-    ,'spineii-main-summarycarerecord']
+    JOB_FILTER = 'spineii-main'
     
     
 
@@ -145,7 +139,7 @@ class JenkinsSampler(DashieSampler):
     def _jobFilter(self, job):
     
         jobName = self._findByKey(job, self.JOBS_KEY)
-        return jobName in self.JOB_FILTER
+        return self.JOB_FILTER in jobName
 
     def _parseRequest(self, json):
         
