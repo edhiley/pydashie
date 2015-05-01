@@ -1,4 +1,5 @@
 from dashie_sampler import DashieSampler
+#from requests.auth import HTTPBasicAuth
 
 import random
 import requests
@@ -88,8 +89,10 @@ class ActiveIncidentsJiraSampler(DashieSampler):
           }
 
     def sample(self):
-        #r = requests.get('http://localhost:8080/jira/triage_assigned.json', auth=('user', 'pass'))
-        r = requests.get('http://localhost:8080/jira/jira_active_incidents.json', auth=('user', 'pass'))   
+        #r = requests.get('http://localhost:8080/jira/jira_active_incidents.json', auth=('user', 'pass'))
+        #auth = HTTPBasicAuth('matt.puzey', 'esabhm7j')
+        r = requests.get('https://nhss-jira.bjss.co.uk/rest/api/2/search?jql=issuetype+%3D+Incident+AND+status+in+(Open,+%22In+Progress%22)', auth=('matt.puzey', 'esabhm7j'), verify=False)  
+        #print "Hello " + r.json() 
         return {'items': [self._parseRequest(issue) for issue in r.json()['issues']]}
         
 
