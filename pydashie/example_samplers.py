@@ -1,64 +1,70 @@
 from dashie_sampler import DashieSampler
-#from requests.auth import HTTPBasicAuth
 
 import random
 import requests
 import collections
 
-#class ConfluenceMergeQueueSampler(DashieSampler):
+"""class ConfluenceMergeQueueSampler(DashieSampler):
 
-   #ID_KEY = ['fields', 'body', 'view', 'value']
-    #SUMMARY_KEY = ['fields', 'summary']
-    #SEVERITY_MAP = {
-      #  '1 Critical': '9',
-       # '2 Major': '10',
-       # '3 Important': '11',
-       # '4 Minor': '12',
-       # '5 Low': '13',
-   # }
-    #ISSUE_KEY = ['key']
+   ID_KEY = ['fields', 'body', 'view', 'value']
+   SUMMARY_KEY = ['fields', 'summary']
+   SEVERITY_MAP = {
+       '1 Critical': '9',
+       '2 Major': '10',
+       '3 Important': '11',
+       '4 Minor': '12',
+       '5 Low': '13',
+   }
+    ISSUE_KEY = ['key']
 
-    #def __init__(self, *args, **kwargs):
-       # DashieSampler.__init__(self, *args, **kwargs)
+    def __init__(self, *args, **kwargs):
+        DashieSampler.__init__(self, *args, **kwargs)
 
-    #def name(self):
-     #   return 'mergequeue'
+    def name(self):
+      return 'mergequeue'
 
-    #def _findByKey(self, val, keys):
+    def _findByKey(self, val, keys):
 
-      # if len(keys) == 0:
-          #  return val
+       if len(keys) == 0:
+            return val
             
-        #print val[keys[0]], keys[1:]
+        print val[keys[0]], keys[1:]
 
-      #  return self._findByKey(val[keys[0]], keys[1:])
+        return self._findByKey(val[keys[0]], keys[1:])
         
-    #def _parseRequest(self, json):
-      #  status = self._findByKey(json, self.ID_KEY)
+    def _parseRequest(self, json):
+       status = self._findByKey(json, self.ID_KEY)
         
-        #return {
-      #      'label': self._findByKey(json, self.ID_KEY),
-           # 'value': self._findByKey(json, self.SEVERITY_KEY),
-           # 'value': self._findByKey(json, self.SUMMARY_KEY),
-           # 'importanceLabel': self.SEVERITY_MAP[status],
-            #'importanceValue': self.SEVERITY_MAP[status],
-       #   }
+        return {
+           'label': self._findByKey(json, self.ID_KEY),
+            'value': self._findByKey(json, self.SEVERITY_KEY),
+           'value': self._findByKey(json, self.SUMMARY_KEY),
+           'importanceLabel': self.SEVERITY_MAP[status],
+           'importanceValue': self.SEVERITY_MAP[status],
+          }
 
-   # def sample(self):
-        #r = requests.get('http://localhost:8080/jira/triage_assigned.json', auth=('user', 'pass'))
-        #r = requests.get('http://localhost:8080/confluence/merge_queue.json', auth=('user', 'pass'))   
-        #return {'items': [self._parseRequest(issue) for issue in r.json()['id']]}
-       
+   def sample(self):
+        r = requests.get('http://localhost:8080/jira/triage_assigned.json', auth=('user', 'pass'))
+        r = requests.get('http://localhost:8080/confluence/merge_queue.json', auth=('user', 'pass'))   
+        return {'items': [self._parseRequest(issue) for issue in r.json()['id']]}
+"""       
 class ActiveIncidentsJiraSampler(DashieSampler):
 
     SEVERITY_KEY = ['fields', 'customfield_10009', 'value']
     SUMMARY_KEY = ['fields', 'summary']
     SEVERITY_MAP = {
-        '1 Critical': '9',
-        '2 Major': '10',
-        '3 Important': '11',
-        '4 Minor': '12',
-        '5 Low': '13',
+        '1 Critical': '1',
+        '2 Major': '1',
+        '3 Important': '10',
+        '4 Minor': '11',
+        '5 Low': '11',
+    }
+    SEVERITY_LABEL_MAP = {
+        '1 Critical': 'Sev 1',
+        '2 Major': 'Sev 2',
+        '3 Important': 'Sev 3',
+        '4 Minor': 'Sev 4',
+        '5 Low': 'Sev 5',
     }
     ISSUE_KEY = ['key']
 
@@ -71,7 +77,7 @@ class ActiveIncidentsJiraSampler(DashieSampler):
     def _findByKey(self, val, keys):
 
         if len(keys) == 0:
-            return val
+            return val 
             
         #print val[keys[0]], keys[1:]
 
@@ -79,18 +85,17 @@ class ActiveIncidentsJiraSampler(DashieSampler):
         
     def _parseRequest(self, json):
         status = self._findByKey(json, self.SEVERITY_KEY)
+        severity = self._findByKey(json, self.ISSUE_KEY)
         
         return {
-            'label': self._findByKey(json, self.ISSUE_KEY),
-            'value': self._findByKey(json, self.SEVERITY_KEY),
+            'text': self._findByKey(json, self.ISSUE_KEY),
             'value': self._findByKey(json, self.SUMMARY_KEY),
+			'label': self.SEVERITY_LABEL_MAP[status],
             'importanceLabel': self.SEVERITY_MAP[status],
             'importanceValue': self.SEVERITY_MAP[status],
           }
 
     def sample(self):
-        #r = requests.get('http://localhost:8080/jira/jira_active_incidents.json', auth=('user', 'pass'))
-        #auth = HTTPBasicAuth('matt.puzey', 'esabhm7j')
         r = requests.get('https://nhss-jira.bjss.co.uk/rest/api/2/search?jql=issuetype+%3D+Incident+AND+status+in+(Open,+%22In+Progress%22,+Reopened,+%22Developer+Assigned%22,+%22Analysis+Required%22,+%22Triage+Assigned%22,+%22Failed+testing%22,+%22Pending+Assignment%22,+%22Development+Complete%22,+%22Peer+Review%22,+%22Ready+for+Test%22,+%22Rejected+Issue+(Pending+Approval)%22,+%22Review+Unsuccessful%22,+%22Duplicate+Issue+(Pending+Confirmation)%22,+%22Development+Blocked%22,+%22Testing+Blocked%22,+%22Review+Successful%22,+%22On+hold%22,+Pending,+Approved,+%22Test+Review%22)+ORDER+BY+cf%5B10009%5D+ASC,+summary+DESC', auth=('matt.puzey', 'esabhm7j'), verify=False)  
         #print "Hello " + r.json() 
         return {'items': [self._parseRequest(issue) for issue in r.json()['issues']]}
