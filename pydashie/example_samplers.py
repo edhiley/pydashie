@@ -54,11 +54,11 @@ class ActiveIncidentsJiraSampler(DashieSampler):
     SEVERITY_KEY = ['fields', 'customfield_10009', 'value']
     SUMMARY_KEY = ['fields', 'summary']
     SEVERITY_MAP = {
-        '1 Critical': '1',
-        '2 Major': '1',
-        '3 Important': '10',
-        '4 Minor': '11',
-        '5 Low': '11',
+        '1 Critical': '9',
+        '2 Major': '10',
+        '3 Important': '11',
+        '4 Minor': '12',
+        '5 Low': '13',
     }
     ISSUE_KEY = ['key']
 
@@ -91,12 +91,7 @@ class ActiveIncidentsJiraSampler(DashieSampler):
     def sample(self):
         #r = requests.get('http://localhost:8080/jira/jira_active_incidents.json', auth=('user', 'pass'))
         #auth = HTTPBasicAuth('matt.puzey', 'esabhm7j')
-        r = requests.get('https://nhss-jira.bjss.co.uk/rest/api/2/search?jql=issuetype+%3D+Incident+AND+status+in+\
-        (Open,+%22In+Progress%22,+Reopened,+%22Developer+Assigned%22,+%22Analysis+Required%22,+%22Triage+Assigned%22,\
-        +%22Failed+testing%22,+%22Pending+Assignment%22,+%22Development+Complete%22,+%22Peer+Review%22,+%22Ready+for+Test%22,\
-        +%22Rejected+Issue+(Pending+Approval)%22,+%22Review+Unsuccessful%22,+%22Duplicate+Issue+(Pending+Confirmation)%22,\
-        +%22Development+Blocked%22,+%22Testing+Blocked%22,+%22Review+Successful%22,+%22On+hold%22,+Pending,+Approved,\
-        +%22Test+Review%22)+ORDER+BY+summary+DESC', auth=('matt.puzey', 'esabhm7j'), verify=False)  
+        r = requests.get('https://nhss-jira.bjss.co.uk/rest/api/2/search?jql=issuetype+%3D+Incident+AND+status+in+(Open,+%22In+Progress%22,+Reopened,+%22Developer+Assigned%22,+%22Analysis+Required%22,+%22Triage+Assigned%22,+%22Failed+testing%22,+%22Pending+Assignment%22,+%22Development+Complete%22,+%22Peer+Review%22,+%22Ready+for+Test%22,+%22Rejected+Issue+(Pending+Approval)%22,+%22Review+Unsuccessful%22,+%22Duplicate+Issue+(Pending+Confirmation)%22,+%22Development+Blocked%22,+%22Testing+Blocked%22,+%22Review+Successful%22,+%22On+hold%22,+Pending,+Approved,+%22Test+Review%22)+ORDER+BY+cf%5B10009%5D+ASC,+summary+DESC', auth=('matt.puzey', 'esabhm7j'), verify=False)  
         #print "Hello " + r.json() 
         return {'items': [self._parseRequest(issue) for issue in r.json()['issues']]}
         
@@ -113,8 +108,7 @@ class JenkinsSampler(DashieSampler):
         'disabled': '5',
 		'yellow': '6',
 		'red_anime': '7',
-		'notbuilt_anime': '8',
-        'aborted':'7'
+        'aborted':'9'
     }
     SEVERITY_LABEL_MAP = {
         'red': 'Failed',
