@@ -54,11 +54,11 @@ class ActiveIncidentsJiraSampler(DashieSampler):
     SEVERITY_KEY = ['fields', 'customfield_10009', 'value']
     SUMMARY_KEY = ['fields', 'summary']
     SEVERITY_MAP = {
-        '1 Critical': '9',
-        '2 Major': '10',
-        '3 Important': '11',
-        '4 Minor': '12',
-        '5 Low': '13',
+        '1 Critical': '1',
+        '2 Major': '1',
+        '3 Important': '10',
+        '4 Minor': '11',
+        '5 Low': '11',
     }
     ISSUE_KEY = ['key']
 
@@ -113,7 +113,8 @@ class JenkinsSampler(DashieSampler):
         'disabled': '5',
 		'yellow': '6',
 		'red_anime': '7',
-        'aborted':'9'
+		'notbuilt_anime': '8',
+        'aborted':'7'
     }
     SEVERITY_LABEL_MAP = {
         'red': 'Failed',

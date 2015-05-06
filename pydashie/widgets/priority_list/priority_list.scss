@@ -30,7 +30,7 @@ background-image :url ("http://www.craftmasterpaints.co.uk/colours/decorative-fl
     margin: 0 15px;
     text-align: left;
     color: $label-color;
-    font-size:16px;
+    font-size:20px;
   }
 
   ol {
@@ -56,19 +56,71 @@ background-image :url ("http://www.craftmasterpaints.co.uk/colours/decorative-fl
   }
 
   
-  .importance-1 { background-color: #FF0000}
-  .importance-2 { background-color: #333333}
-  .importance-3 { background-color: #00CC00}
-  .importance-4 {background-color: #006633 }
-  .importance-5 {background-color: #000000}
-  .importance-6 { background-color: #FFDB58}
-  .importance-7 { background-color: #A32900}
-  .importance-8 { background-color: #333333}
-  .importance-9 { background-color: #A9A9A9}
-  .importance-10 { background-color: #F88017}
-  .importance-11{ background-color: #6AA121}
-  .importance-12 {background-color: #1569C7}
-  .importance-13 {background-color: #6A287E}
+  .importance-1 { 
+  background-color: #FF0000;
+   -moz-border-radius: 5px;
+  border-radius: 5px;
+  }
+  .importance-2 {
+  background-color: #333333;
+   -moz-border-radius: 5px;
+  border-radius: 5px;
+  }
+  .importance-3 { 
+  background-color: #00CC00;
+   -moz-border-radius: 5px;
+  border-radius: 5px;
+  }
+  .importance-4 {
+  background-color: #006633;
+ -moz-border-radius: 5px;
+  border-radius: 5px;
+  }
+  .importance-5 {
+  background-color: #000000;
+   -moz-border-radius: 5px;
+  border-radius: 5px;
+  }
+  .importance-6 { 
+  background-color: #FFDB58;
+   -moz-border-radius: 5px;
+  border-radius: 5px;
+  }
+  .importance-7 {
+  background-color: #A32900;
+   -moz-border-radius: 5px;
+  border-radius: 5px;
+  }
+  .importance-8 {
+  background-color: #333333;
+   -moz-border-radius: 5px;
+  border-radius: 5px;
+  }
+  .importance-9 {
+  background-color: #A9A9A9;
+   -moz-border-radius: 5px;
+  border-radius: 5px;
+  }
+  .importance-10 {
+  background-color: #F88017;
+   -moz-border-radius: 5px;
+  border-radius: 5px;
+  }
+  .importance-11{
+  background-color: #6AA121;
+   -moz-border-radius: 5px;
+  border-radius: 5px;
+  }
+  .importance-12 {
+  background-color: #1569C7;
+   -moz-border-radius: 5px;
+  border-radius: 5px;
+  }
+  .importance-13 {
+  background-color: #6A287E;
+   -moz-border-radius: 5px;
+  border-radius: 5px;
+  }
 
   
        
