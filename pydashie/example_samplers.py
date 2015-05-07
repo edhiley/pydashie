@@ -42,7 +42,7 @@ class ActiveIncidentsJiraSampler(DashieSampler):
         '3 Important': 'Sev 3',
         '4 Minor': 'Sev 4',
         '5 Low': 'Sev 5',
-        '': '',
+        '': 'No Sev',
     }
     ISSUE_KEY = ['key']
 
