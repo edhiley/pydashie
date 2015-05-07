@@ -6,17 +6,17 @@ import collections
 
 """class ConfluenceMergeQueueSampler(DashieSampler):
 
-   ID_KEY = ['fields', 'body', 'view', 'value']
-   SUMMARY_KEY = ['fields', 'summary']
-   SEVERITY_MAP = {
+    ID_KEY = ['fields', 'body', 'view', 'value']
+    SUMMARY_KEY = ['fields', 'summary']
+    SEVERITY_MAP = {
        '1 Critical': '9',
        '2 Major': '10',
        '3 Important': '11',
        '4 Minor': '12',
        '5 Low': '13',
-   }
-    ISSUE_KEY = ['key']
-
+    
+    }
+    
     def __init__(self, *args, **kwargs):
         DashieSampler.__init__(self, *args, **kwargs)
 
@@ -28,26 +28,23 @@ import collections
        if len(keys) == 0:
             return val
             
-        print val[keys[0]], keys[1:]
+       print val[keys[0]], keys[1:]
 
-        return self._findByKey(val[keys[0]], keys[1:])
+       return self._findByKey(val[keys[0]], keys[1:])
         
     def _parseRequest(self, json):
        status = self._findByKey(json, self.ID_KEY)
         
-        return {
-           'label': self._findByKey(json, self.ID_KEY),
-            'value': self._findByKey(json, self.SEVERITY_KEY),
-           'value': self._findByKey(json, self.SUMMARY_KEY),
-           'importanceLabel': self.SEVERITY_MAP[status],
-           'importanceValue': self.SEVERITY_MAP[status],
-          }
+       
+           
 
-   def sample(self):
-        r = requests.get('http://localhost:8080/jira/triage_assigned.json', auth=('user', 'pass'))
-        r = requests.get('http://localhost:8080/confluence/merge_queue.json', auth=('user', 'pass'))   
-        return {'items': [self._parseRequest(issue) for issue in r.json()['id']]}
-"""       
+    def sample(self):
+        liveRelease = tree.xpath('//[@class="confluenceTh"]>Current Release in LIVE')
+        r = requests.get('view-source:https://nhss-confluence.bjss.co.uk/display/SPINE/Web+Home%3A+NHS+Spine+II+Wiki', auth=('user', 'pass'))   
+        
+        return {liveRelease}
+"""        
+       
 class ActiveIncidentsJiraSampler(DashieSampler):
 
     SEVERITY_KEY = ['fields', 'customfield_10009', 'value']
@@ -113,7 +110,8 @@ class JenkinsSampler(DashieSampler):
         'disabled': '5',
 		'yellow': '6',
 		'red_anime': '7',
-        'aborted':'9'
+        'aborted':'9',
+        'yellow_anime': '6',
     }
     SEVERITY_LABEL_MAP = {
         'red': 'Failed',
@@ -124,16 +122,15 @@ class JenkinsSampler(DashieSampler):
 		'yellow': 'Unstable',
 		'red_anime':'Failed-In Progress',
 		'notbuilt_anime' : 'Not Built-In Progress',
-        'aborted' : 'Aborted'
+        'aborted' : 'Aborted',
+        'yellow_anime': 'Unstable-In Progress',
     }
     JOB_FILTER = 'spineii-main'
     
     
-
     def name(self):
         return 'jenkins'
-            
-            
+               
     def __init__(self, *args, **kwargs):
         DashieSampler.__init__(self, *args, **kwargs)
  
