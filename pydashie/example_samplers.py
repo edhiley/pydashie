@@ -3,48 +3,27 @@ from dashie_sampler import DashieSampler
 import random
 import requests
 import collections
+#import re 
+"""
+class ConfluenceReleaseNnumberSampler(DashieSampler):
 
-"""class ConfluenceMergeQueueSampler(DashieSampler):
-
-    ID_KEY = ['fields', 'body', 'view', 'value']
-    SUMMARY_KEY = ['fields', 'summary']
-    SEVERITY_MAP = {
-       '1 Critical': '9',
-       '2 Major': '10',
-       '3 Important': '11',
-       '4 Minor': '12',
-       '5 Low': '13',
-    
-    }
-    
     def __init__(self, *args, **kwargs):
         DashieSampler.__init__(self, *args, **kwargs)
 
     def name(self):
-      return 'mergequeue'
-
-    def _findByKey(self, val, keys):
-
-       if len(keys) == 0:
-            return val
-            
-       print val[keys[0]], keys[1:]
-
-       return self._findByKey(val[keys[0]], keys[1:])
-        
-    def _parseRequest(self, json):
-       status = self._findByKey(json, self.ID_KEY)
-        
-       
-           
-
+      return 'release'
+  
     def sample(self):
-        liveRelease = tree.xpath('//[@class="confluenceTh"]>Current Release in LIVE')
-        r = requests.get('view-source:https://nhss-confluence.bjss.co.uk/display/SPINE/Web+Home%3A+NHS+Spine+II+Wiki', auth=('user', 'pass'))   
+        wikiHome = requests.get("https://nhss-confluence.bjss.co.uk/display/SPINE/Web+Home%3A+NHS+Spine+II+Wiki", 
+        auth=("edward.hiley","<secret>"), 
+        verify=False)
+    
+        currentLiveReleasePattern = "\<pre\sid\='currentLiveRelease'\>(.*?)</pre>"
+        matches = re.search(currentLiveReleasePattern, wikiHome.text)
+        releaseTable = matches.group(1)
         
-        return {liveRelease}
-"""        
-       
+        return releaseTable
+ """      
 class ActiveIncidentsJiraSampler(DashieSampler):
 
     SEVERITY_KEY = ['fields', 'customfield_10009', 'value']
@@ -55,6 +34,7 @@ class ActiveIncidentsJiraSampler(DashieSampler):
         '3 Important': '10',
         '4 Minor': '11',
         '5 Low': '11',
+        '': '12',
     }
     SEVERITY_LABEL_MAP = {
         '1 Critical': 'Sev 1',
@@ -62,6 +42,7 @@ class ActiveIncidentsJiraSampler(DashieSampler):
         '3 Important': 'Sev 3',
         '4 Minor': 'Sev 4',
         '5 Low': 'Sev 5',
+        '': '',
     }
     ISSUE_KEY = ['key']
 
@@ -71,21 +52,24 @@ class ActiveIncidentsJiraSampler(DashieSampler):
     def name(self):
         return 'activeincidents'
 
-    def _findByKey(self, val, keys):
+    def _findByKey(self, val, keys, default = None):
 
         if len(keys) == 0:
             return val 
             
         #print val[keys[0]], keys[1:]
-
-        return self._findByKey(val[keys[0]], keys[1:])
+        #print 'default = '.format(default)
+        if not val or keys[0] not in val:
+            return default
+        else:
+            return self._findByKey(val[keys[0]], keys[1:], default)
         
     def _parseRequest(self, json):
-        status = self._findByKey(json, self.SEVERITY_KEY)
-        severity = self._findByKey(json, self.ISSUE_KEY)
+        status = self._findByKey(json, self.SEVERITY_KEY, default='')
+        severity = self._findByKey(json, self.ISSUE_KEY, default='')
         
         return {
-            'text': self._findByKey(json, self.ISSUE_KEY),
+            'text': severity,
             'value': self._findByKey(json, self.SUMMARY_KEY),
 			'label': self.SEVERITY_LABEL_MAP[status],
             'importanceLabel': self.SEVERITY_MAP[status],
@@ -110,8 +94,7 @@ class JenkinsSampler(DashieSampler):
         'disabled': '5',
 		'yellow': '6',
 		'red_anime': '7',
-        'aborted':'9',
-        'yellow_anime': '6',
+        'aborted':'9'
     }
     SEVERITY_LABEL_MAP = {
         'red': 'Failed',
@@ -122,15 +105,16 @@ class JenkinsSampler(DashieSampler):
 		'yellow': 'Unstable',
 		'red_anime':'Failed-In Progress',
 		'notbuilt_anime' : 'Not Built-In Progress',
-        'aborted' : 'Aborted',
-        'yellow_anime': 'Unstable-In Progress',
+        'aborted' : 'Aborted'
     }
     JOB_FILTER = 'spineii-main'
     
     
+
     def name(self):
         return 'jenkins'
-               
+            
+            
     def __init__(self, *args, **kwargs):
         DashieSampler.__init__(self, *args, **kwargs)
  
