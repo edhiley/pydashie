@@ -77,7 +77,7 @@ class ActiveIncidentsJiraSampler(DashieSampler):
           }
 
     def sample(self):
-        r = requests.get('https://nhss-jira.bjss.co.uk/rest/api/2/search?jql=issuetype+%3D+Incident+AND+status+in+(Open,+%22In+Progress%22,+Reopened,+%22Developer+Assigned%22,+%22Analysis+Required%22,+%22Triage+Assigned%22,+%22Failed+testing%22,+%22Pending+Assignment%22,+%22Development+Complete%22,+%22Peer+Review%22,+%22Ready+for+Test%22,+%22Rejected+Issue+(Pending+Approval)%22,+%22Review+Unsuccessful%22,+%22Duplicate+Issue+(Pending+Confirmation)%22,+%22Development+Blocked%22,+%22Testing+Blocked%22,+%22Review+Successful%22,+%22On+hold%22,+Pending,+Approved,+%22Test+Review%22)+ORDER+BY+cf%5B10009%5D+ASC,+summary+DESC', auth=('matt.puzey', 'esabhm7j'), verify=False)  
+        r = requests.get('https://nhss-jira.bjss.co.uk/rest/api/2/search?jql=(issuetype+%3D+Incident+AND+cf%5B10805%5D+%3D+live+OR+issuetype+%3D+%22Cherwell+Service+Request%22)+AND+status+not+in+(closed)+ORDER+BY+cf%5B10009%5D+ASC,+created+ASC ', auth=('matt.puzey', 'esabhm7j'), verify=False)  
         #print "Hello " + r.json() 
         return {'items': [self._parseRequest(issue) for issue in r.json()['issues']]}
         
@@ -94,7 +94,8 @@ class JenkinsSampler(DashieSampler):
         'disabled': '5',
 		'yellow': '6',
 		'red_anime': '7',
-        'aborted':'9'
+        'aborted':'9',
+        'yellow_anime': '6',
     }
     SEVERITY_LABEL_MAP = {
         'red': 'Failed',
@@ -105,7 +106,8 @@ class JenkinsSampler(DashieSampler):
 		'yellow': 'Unstable',
 		'red_anime':'Failed-In Progress',
 		'notbuilt_anime' : 'Not Built-In Progress',
-        'aborted' : 'Aborted'
+        'aborted' : 'Aborted',
+        'yellow_anime': 'Unstable-In Progress',
     }
     JOB_FILTER = 'spineii-main'
     
