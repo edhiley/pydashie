@@ -3,31 +3,32 @@ from dashie_sampler import DashieSampler
 import random
 import requests
 import collections
-#import re 
+import re 
+import datetime
 """
-class ConfluenceReleaseNnumberSampler(DashieSampler):
-
-    def __init__(self, *args, **kwargs):
-        DashieSampler.__init__(self, *args, **kwargs)
+class ConfluenceReleaseNumberSampler(DashieSampler):
 
     def name(self):
-      return 'release'
+      return 'releasenumber'
   
     def sample(self):
-        wikiHome = requests.get("https://nhss-confluence.bjss.co.uk/display/SPINE/Web+Home%3A+NHS+Spine+II+Wiki", 
-        auth=("edward.hiley","<secret>"), 
-        verify=False)
-    
+        wikiHome = requests.get("https://nhss-confluence.bjss.co.uk/display/SPINE/Web+Home%3A+NHS+Spine+II+Wiki", auth=('emma.holmes', 'loopyloo'), verify=False)
+
         currentLiveReleasePattern = "\<pre\sid\='currentLiveRelease'\>(.*?)</pre>"
-        matches = re.search(currentLiveReleasePattern, wikiHome.text)
+        matches = re.search (currentLiveReleasePattern, wikiHome.text)
+        print matches
+        print matches.group(0)
         releaseTable = matches.group(1)
-        
-        return releaseTable
- """      
+        print releaseTable
+   """     
+ 	
+     
 class ActiveIncidentsJiraSampler(DashieSampler):
 
     SEVERITY_KEY = ['fields', 'customfield_10009', 'value']
     SUMMARY_KEY = ['fields', 'summary']
+    TIME_KEY= ['fields', 'created']
+    STATUS_KEY=['fields','status', 'name']
     SEVERITY_MAP = {
         '1 Critical': '1',
         '2 Major': '1',
@@ -42,9 +43,11 @@ class ActiveIncidentsJiraSampler(DashieSampler):
         '3 Important': 'Sev 3',
         '4 Minor': 'Sev 4',
         '5 Low': 'Sev 5',
-        '': 'No Sev',
-    }
+        '': 'Sev --',
+		
+	}
     ISSUE_KEY = ['key']
+	
 
     def __init__(self, *args, **kwargs):
         DashieSampler.__init__(self, *args, **kwargs)
@@ -63,22 +66,29 @@ class ActiveIncidentsJiraSampler(DashieSampler):
             return default
         else:
             return self._findByKey(val[keys[0]], keys[1:], default)
-        
+	       
     def _parseRequest(self, json):
         status = self._findByKey(json, self.SEVERITY_KEY, default='')
         severity = self._findByKey(json, self.ISSUE_KEY, default='')
-        
+        #today= datetime.date.today()
+        #someday= self._findByKey(json, self.TIME_KEY, default='')
+        #diff= (someday - today)
+        #days= diff.days
         return {
             'text': severity,
             'value': self._findByKey(json, self.SUMMARY_KEY),
 			'label': self.SEVERITY_LABEL_MAP[status],
+			#'time': days[status],
+			'time': self._findByKey(json, self.TIME_KEY)[0:10],
+			'status': self._findByKey(json, self.STATUS_KEY),
             'importanceLabel': self.SEVERITY_MAP[status],
             'importanceValue': self.SEVERITY_MAP[status],
           }
 
     def sample(self):
         r = requests.get('https://nhss-jira.bjss.co.uk/rest/api/2/search?jql=(issuetype+%3D+Incident+AND+cf%5B10805%5D+%3D+live+OR+issuetype+%3D+%22Cherwell+Service+Request%22)+AND+status+not+in+(closed)+ORDER+BY+cf%5B10009%5D+ASC,+created+ASC ', auth=('matt.puzey', 'esabhm7j'), verify=False)  
-        #print "Hello " + r.json() 
+       #print "Hello " + r.json() 
+        print 'refresh'
         return {'items': [self._parseRequest(issue) for issue in r.json()['issues']]}
         
 
@@ -151,22 +161,50 @@ class JenkinsSampler(DashieSampler):
         jobs = r.json()['jobs']
         return {'items': [self._parseRequest(job) for job in jobs if self._jobFilter(job)]}
 
+""""
 
+class BuiltJenkins(DashieSampler):
 
-class SynergySampler(DashieSampler):
-    def __init__(self, *args, **kwargs):
-        DashieSampler.__init__(self, *args, **kwargs)
-        self._last = 0
+	STATUS_KEY = ['color']
+	JOB_FILTER = 'blue'
+    
+	def __init__(self, *args, **kwargs):
+         DashieSampler.__init__(self, *args, **kwargs)
+        
 
-    def name(self):
-        return 'synergy'
+	def name(self):
+			return 'jenkinsbuilt'
+		
+	def _findByKey(self, val, keys):
 
-    def sample(self):
-        s = {'value': random.randint(0, 100),
-             'current': random.randint(0, 100),
-             'last': self._last}
-        self._last = s['current']
-        return s
+			if len(keys) == 0:
+				return val
+
+			return self._findByKey(val[keys[0]], keys[1:])
+        
+	def _jobFilter(self, job):
+    
+			jobName = self._findByKey(job, self.STATUS_KEY)
+			return self.JOB_FILTER in jobName
+		  
+	def _parseRequest(self, json):
+        
+			status = self._findByKey(json, self.STATUS_KEY)
+			current= self._findByKey(json, self.JOB_FILTER)
+			
+			return {
+            'label': self.SEVERITY_LABEL_MAP[status],
+            'value': self._findByKey(json, self.JOBS_KEY),
+            'importanceLabel': self.SEVERITY_LABEL_MAP[status],
+            'importanceValue': self.SEVERITY_MAP[status],
+        }
+               
+
+	def sample(self):
+		r = requests.get('http://nhss-aux.bjss.co.uk:8080/api/json?pretty=true', auth=('matthew.puzey', 'vertebrae'))
+		jobs = r.json()['jobs']
+               
+		return sum(JOB_FILTER)[status]
 
 class BuzzwordsSampler(DashieSampler):
     def name(self):
@@ -200,3 +238,4 @@ class ConvergenceSampler(DashieSampler):
         if len(self.items) > 10:
             self.items.popleft()
         return {'points': list(self.items)}
+"""

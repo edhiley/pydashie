@@ -1,4 +1,6 @@
 class Dashing.PriorityList extends Dashing.Widget
+
+
   ready: ->
     if @get('unordered')
       $(@node).find('ol').remove()

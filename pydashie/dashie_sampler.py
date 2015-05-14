@@ -34,3 +34,7 @@ class DashieSampler:
         data = self.sample()
         if data:
             self._send_event(self.name(), data)
+			
+    
+	
+	

@@ -2,12 +2,13 @@ from example_samplers import *
 
 def run(app, xyzzy):
     samplers = [
-        SynergySampler(xyzzy, 3),
-        BuzzwordsSampler(xyzzy, 2), # 10
-        ConvergenceSampler(xyzzy, 1),
-        ActiveIncidentsJiraSampler(xyzzy, 3),
-        JenkinsSampler(xyzzy, 3),
-		#ConfluenceMergeQueueSampler(xyzzy,3),
+        #BuiltJenkins(xyzzy, 3),
+        #BuzzwordsSampler(xyzzy, 2), # 10
+        #ConvergenceSampler(xyzzy, 1),
+        ActiveIncidentsJiraSampler(xyzzy, 60),
+        JenkinsSampler(xyzzy, 60),
+		#ConfluenceReleaseNumberSampler(xyzzy,5),
+		
     ]
 
     try:

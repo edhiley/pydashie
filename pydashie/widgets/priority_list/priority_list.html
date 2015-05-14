@@ -2,18 +2,25 @@
 
 <ol>
   <li data-foreach-item="items">
-    <span class="text" data-bind="item.text"></span>
+    <span class="time" data-bind="item.time"></span>
+	<span class="text" data-bind="item.text"></span>
+	<span class="status" data-bind="item.status"></span>
 	<span class="label" data-bind="item.label"></span>
     <span class="value" data-bind="item.value"></span>
+	
 
   </li>
 </ol>
 
 <ul class="list-nostyle">
   <li data-foreach-item="items">
-    <span class="text" data-bind="item.text"></span>
+	<span class="time" data-bind="item.time"></span>
+	<span class="text" data-bind="item.text"></span>
 	<span data-bind-class="item.importanceValue | prepend 'label importance-'" data-bind="item.label" ></span>
-    <span class="value" data-bind="item.value"></span>
+	<span class="status" data-bind="item.status"></span>   
+   	<span class="value" data-bind="item.value"></span>
+	
+	 
 	
   </li>
 </ul>
