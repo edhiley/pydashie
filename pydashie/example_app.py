@@ -3,8 +3,6 @@ from example_samplers import *
 def run(app, xyzzy):
     samplers = [
         #BuiltJenkins(xyzzy, 3),
-        #BuzzwordsSampler(xyzzy, 2), # 10
-        #ConvergenceSampler(xyzzy, 1),
         ActiveIncidentsJiraSampler(xyzzy, 60),
         JenkinsSampler(xyzzy, 60),
 		#ConfluenceReleaseNumberSampler(xyzzy,5),
