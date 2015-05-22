@@ -1,3 +1,4 @@
+"""
 from dashie_sampler import DashieSampler
 
 import random
@@ -5,7 +6,7 @@ import requests
 import collections
 import re 
 import datetime
-"""
+
 class ConfluenceReleaseNumberSampler(DashieSampler):
 
     def name(self):
@@ -20,7 +21,7 @@ class ConfluenceReleaseNumberSampler(DashieSampler):
         print matches.group(0)
         releaseTable = matches.group(1)
         print releaseTable
-   """     
+    
  	
      
 class ActiveIncidentsJiraSampler(DashieSampler):
@@ -76,7 +77,6 @@ class ActiveIncidentsJiraSampler(DashieSampler):
             'text': severity,
             'value': self._findByKey(json, self.SUMMARY_KEY),
 			'label': self.SEVERITY_LABEL_MAP[status],
-			#'time': days[status],
 			'time': "%s.%s.%s" % (time[8:10],time[5:7], time[2:4]),
 			'status': self._findByKey(json, self.STATUS_KEY),
             'importanceLabel': self.SEVERITY_MAP[status],
@@ -159,7 +159,7 @@ class JenkinsSampler(DashieSampler):
         jobs = r.json()['jobs']
         return {'items': [self._parseRequest(job) for job in jobs if self._jobFilter(job)]}
 
-""""
+
 
 class BuiltJenkins(DashieSampler):
 
@@ -203,4 +203,6 @@ class BuiltJenkins(DashieSampler):
 		jobs = r.json()['jobs']
                
 		return sum(JOB_FILTER)[status]
+        
+        
 """
