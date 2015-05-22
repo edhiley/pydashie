@@ -72,6 +72,6 @@ class JenkinsSampler(DashieSampler):
         }
 
     def sample(self):
-        r = requests.get('http://nhss-aux.bjss.co.uk:8080/api/json?pretty=true', auth=('matthew.puzey', 'vertebrae'))
+        r = requests.get('http://nhss-aux.bjss.co.uk:8080/api/json?pretty=true', auth=('joel.bywater', 'vertebrae'))
         jobs = r.json()['jobs']
         return {'items': [self._parseRequest(job) for job in jobs if self._jobFilter(job)]}
