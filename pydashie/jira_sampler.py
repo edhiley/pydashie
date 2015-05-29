@@ -60,7 +60,7 @@ class LiveIncidentsJiraSampler(DashieSampler):
             'text': severity,
             'value': self._findByKey(json, self.SUMMARY_KEY),
             'label': self.SEVERITY_LABEL_MAP[status],
-            'time': "%s.%s.%s" % (time[8:10],time[5:7], time[2:4]),
+            'time': "(%s.%s.%s)" % (time[8:10],time[5:7], time[2:4]),
             'status': self._findByKey(json, self.STATUS_KEY),
             'importanceLabel': self.SEVERITY_MAP[status],
             'importanceValue': self.SEVERITY_MAP[status],

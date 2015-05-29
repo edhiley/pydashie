@@ -20,41 +20,28 @@
     <div id="container">
       <div class="gridster">
   <ul>
-  <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="releasenumber" data-view="Text" data-title="Current and Next Release" data-text="" data-moreinfo=""></div>
-    </li> 
-  <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+    <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
       <div data-id="mergequeue" data-view="Text" data-title="Merge Queue (Top 3)" data-moreinfo="Data based on confluence merge queue table"></div>
     </li>
 	<li data-row="1" data-col="3" data-sizex="1" data-sizey="1" >
-         
-          <div data-id="jenkinsfailedcount"  data-view="Text" data-unordered="true" data-title="Jenkins Failed Count" ></div>
+          <div data-id="jenkinsfailedcount"  data-view="Text" data-unordered="true" data-title="Failed" ></div><br />
+          <div data-id="jenkinsbuildingcount"  data-view="Text" data-unordered="true" data-title="Building" ></div><br />
+          <div data-id="jenkinsbuilt"  data-view="Text" data-unordered="true" data-title="Built" ></div>
     </li>
     <li data-row="1" data-col="4" data-sizex="2" data-sizey="2" >
-         
           <div data-id="failedjenkins"  data-view="PriorityList" data-unordered="true" data-title="Failed & Other Jenkins" ></div>
     </li>
-    
-	<li data-row="2" data-col="1" data-sizex="2" data-sizey="2">
+	<li data-row="2" data-col="1" data-sizex="3" data-sizey="2">
       <div data-id="activeincidents" data-view="PriorityList" data-unordered="true" data-title="Live Incidents by Severity"></div>
     </li>
-	<li data-row="2" data-col="3" data-sizex="1" data-sizey="1" >
-         
-          <div data-id="jenkinsbuildingcount"  data-view="Text" data-unordered="true" data-title="Jenkins Building Count" ></div>
+	 <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="cutdates" data-view="Text" data-title="Current and Next Release" data-moreinfo=""></div>
     </li>
-	
-	
-	 <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
-      <div data-id="cutdates" data-view="Text" data-title="Cut from Develop" data-moreinfo=""></div>
-    </li>
-    
-    <li data-row="3" data-col="3" data-sizex="1" data-sizey="1" >
-         
-          <div data-id="jenkinsbuilt"  data-view="Text" data-unordered="true" data-title="Jenkins Built Count" ></div>
-    
- 
     <li data-row="3" data-col="5" data-sizex="1" data-sizey="1">
-      <div data-id="what" data-view="Text" data-title="What would you like to see here?"data-moreinfo="If there is any data you would like shown on the dashboard please speak to one of the graduates"></div>
+      <div data-id="what" data-view="Text" data-title="What would you like to see here?" data-moreinfo="If there is any data you would like shown on the dashboard please speak to one of the graduates"></div>
+    </li>
+    <li data-row="3" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="activesite" data-view="Text" data-unordered="true" data-title="Current Active Site" data-moreinfo="KOP to be added so this is always accurate"></div>
     </li>
 
   </ul>

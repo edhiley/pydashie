@@ -9,23 +9,23 @@ from built_jenkins import*
 from not_built_jenkins_count_sampler import*
 #from other_build_jenkins import*
 from building_jenkins_count import*
-
-
+from active_site_kop import*
  
 # Samplers and refresh rates are defined here 
 def run(app, xyzzy):
     samplers = [
-        BuiltJenkins(xyzzy, 60),
+        BuiltJenkins(xyzzy, 30),
 		#BuiltJenkinsSampler(xyzzy, 60),
-        LiveIncidentsJiraSampler(xyzzy, 60),
+        LiveIncidentsJiraSampler(xyzzy, 30),
         #JenkinsSampler(xyzzy, 60),
 		ConfluenceReleaseNumberSampler(xyzzy, 60),
         CutFromDevelopSampler(xyzzy, 60),
-        FailedJenkinsSampler(xyzzy, 60),
+        FailedJenkinsSampler(xyzzy, 30),
 		MergeQueue(xyzzy, 60),
-		FailJenkinsCount(xyzzy, 60),
+		FailJenkinsCount(xyzzy, 30),
 		#OtherJenkinsSampler(xyzzy,60),
-		BuildingJenkinsCount(xyzzy,60)
+		BuildingJenkinsCount(xyzzy, 30),
+        ActiveSite(xyzzy, 2),
 		
     ]
 
