@@ -1,19 +1,32 @@
 from jenkins_sampler import *
 from jira_sampler import * 
-from confluence_release_sampler import *
+#from confluence_release_sampler import *
 from not_built_jenkins_sampler import *
 from cut_from_develop_sampler import *
+from merge_queue_sampler import *
+from built_jenkins import*
+from built_jenkins_list import*
+from not_built_jenkins_count_sampler import*
+from other_build_jenkins import*
+from building_jenkins_count import*
+
 
  
 # Samplers and refresh rates are defined here 
 def run(app, xyzzy):
     samplers = [
-        #BuiltJenkins(xyzzy, 3),
-        LiveIncidentsJiraSampler(xyzzy, 60),
-        JenkinsSampler(xyzzy, 60),
-		ConfluenceReleaseNumberSampler(xyzzy, 5),
-        #CutFromDevelopSampler(xyzzy, 2),
-        FailedJenkinsSampler(xyzzy, 60)
+        BuiltJenkins(xyzzy, 3),
+		BuiltJenkinsSampler(xyzzy, 3),
+        LiveIncidentsJiraSampler(xyzzy, 5),
+        JenkinsSampler(xyzzy, 5),
+		#ConfluenceReleaseNumberSampler(xyzzy, 5),
+        CutFromDevelopSampler(xyzzy, 5),
+        FailedJenkinsSampler(xyzzy, 5),
+		MergeQueue(xyzzy, 5),
+		FailJenkinsCount(xyzzy, 5),
+		OtherJenkinsSampler(xyzzy,5),
+		BuildingJenkinsCount(xyzzy,5)
+		
     ]
 
     try:

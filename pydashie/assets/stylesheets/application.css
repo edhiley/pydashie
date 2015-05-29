@@ -480,6 +480,39 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
     color: rgba(255, 255, 255, 0.7); }
   .widget-text.large h3 {
     font-size: 65px; }
+	.widget-text.number {
+    font-size: 150px; }
+	
+
+	
+	
+	
+.widget-text.jenkinsbuilt{
+background-color: #6AA121;
+font-size: 80px;
+}
+
+.widget-text.jenkinsfailedcount{
+background-color: #FF0000;
+font-size: 80px;
+}
+
+.widget-text.jenkinsbuildingcount{
+background-color: #FFA500;
+font-size: 80px;
+}
+
+.widget-text.mergequeue{
+background-color: #333366;
+
+}
+
+.widget-text.cutdates{
+background-color: #993399;
+
+}
+
+	
 	
 
 /*

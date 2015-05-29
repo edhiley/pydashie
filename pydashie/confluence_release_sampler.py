@@ -30,7 +30,9 @@ class ConfluenceReleaseNumberSampler(DashieSampler):
         releaseNext = match.group(1)
         #print releaseCurrent
         print releaseNext
-        return {"text": releaseCurrent,
-                "text": releaseNext
+        print releaseCurrent
+        return {'text': releaseCurrent,
+                'value': releaseNext,
+
             }
         

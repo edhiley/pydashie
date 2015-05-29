@@ -5,14 +5,10 @@ import re
 
 from dashie_sampler import DashieSampler
 import requests
-
-
-class FailedJenkinsSampler(DashieSampler):
+class OtherJenkinsSampler(DashieSampler):
 
     JOBS_KEY = ['name']
     STATUS_KEY = ['color']
-    #AUTHOR_KEY_MAP={ 'Joseph Partridge': 'Joeseph Partridge',}
-    #AUTHOR_KEY=['lastBuild', 'changeSet', 'items', 'author', 'fullName']
     SEVERITY_MAP = {
         'red': '1',
         'notbuilt': '2',
@@ -37,10 +33,11 @@ class FailedJenkinsSampler(DashieSampler):
         'yellow_anime': 'Unstable-In Progress',
     }
     JOB_FILTER = ''
-      
+    
+    
 
     def name(self):
-        return 'failedjenkins'
+        return 'otherjenkins'
             
             
     def __init__(self, *args, **kwargs):
@@ -58,23 +55,22 @@ class FailedJenkinsSampler(DashieSampler):
         jobName = self._findByKey(job, self.JOBS_KEY)
         return self.JOB_FILTER in jobName
 
-    def _parseRequest(self, json):
-    #author = self._findByKey(json, self.AUTHOR_KEY)
-        STATUS_FILTER = 'red'
-        STAT_FILTER = 'red_anime'
+    def _parseRequest(self, json):   
+        STATUS_FILTER1 = 'notbuilt'
+        STATUS_FILTER2 = 'disabled'
+        STATUS_FILTER3 = 'yellow'
+        STATUS_FILTER4 ='aborted'
+        STATUS_FILTER5 ='yellow_anime'
         status = self._findByKey(json, self.STATUS_KEY)
-        if status == STATUS_FILTER or status == STAT_FILTER:               
-            return {
-                'label': self.SEVERITY_LABEL_MAP[status],
-                'value': self._findByKey(json, self.JOBS_KEY),
-                #'text': self.AUTHOR_KEY_MAP[author],
-                'importanceLabel': self.SEVERITY_LABEL_MAP[status],
-                'importanceValue': self.SEVERITY_MAP[status],
-            }
-        else:
-            return ""
-    
-    
+        if status == STATUS_FILTER1 or status == STATUS_FILTER2 or status == STATUS_FILTER3 or status == STATUS_FILTER4 or status == STATUS_FILTER5: 
+           
+				return {
+            'label': self.SEVERITY_LABEL_MAP[status],
+            'value': self._findByKey(json, self.JOBS_KEY),
+            'importanceLabel': self.SEVERITY_LABEL_MAP[status],
+            'importanceValue': self.SEVERITY_MAP[status],
+        }
+
     def sample(self):
         r = requests.get('http://nhss-aux.bjss.co.uk:8080/view/Main%20Builds/api/json?pretty=true', auth=('joel.bywater', 'vertebrae'))
         jobs = r.json()['jobs']
