@@ -17,11 +17,11 @@ def run(app, xyzzy):
     samplers = [
         BuiltJenkins(xyzzy, 60),
 		#BuiltJenkinsSampler(xyzzy, 60),
-        LiveIncidentsJiraSampler(xyzzy, 5),
+        LiveIncidentsJiraSampler(xyzzy, 60),
         #JenkinsSampler(xyzzy, 60),
 		ConfluenceReleaseNumberSampler(xyzzy, 60),
         CutFromDevelopSampler(xyzzy, 60),
-        FailedJenkinsSampler(xyzzy, 5),
+        FailedJenkinsSampler(xyzzy, 60),
 		MergeQueue(xyzzy, 60),
 		FailJenkinsCount(xyzzy, 60),
 		#OtherJenkinsSampler(xyzzy,60),
