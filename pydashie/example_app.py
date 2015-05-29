@@ -1,13 +1,13 @@
-from jenkins_sampler import *
+#from jenkins_sampler import *
 from jira_sampler import * 
-#from confluence_release_sampler import *
+from confluence_release_sampler import *
 from not_built_jenkins_sampler import *
 from cut_from_develop_sampler import *
 from merge_queue_sampler import *
 from built_jenkins import*
-from built_jenkins_list import*
+#from built_jenkins_list import*
 from not_built_jenkins_count_sampler import*
-from other_build_jenkins import*
+#from other_build_jenkins import*
 from building_jenkins_count import*
 
 
@@ -16,15 +16,15 @@ from building_jenkins_count import*
 def run(app, xyzzy):
     samplers = [
         BuiltJenkins(xyzzy, 60),
-		BuiltJenkinsSampler(xyzzy, 60),
-        LiveIncidentsJiraSampler(xyzzy, 60),
-        JenkinsSampler(xyzzy, 60),
-		#ConfluenceReleaseNumberSampler(xyzzy, 5),
+		#BuiltJenkinsSampler(xyzzy, 60),
+        LiveIncidentsJiraSampler(xyzzy, 5),
+        #JenkinsSampler(xyzzy, 60),
+		ConfluenceReleaseNumberSampler(xyzzy, 60),
         CutFromDevelopSampler(xyzzy, 60),
-        FailedJenkinsSampler(xyzzy, 60),
+        FailedJenkinsSampler(xyzzy, 5),
 		MergeQueue(xyzzy, 60),
 		FailJenkinsCount(xyzzy, 60),
-		OtherJenkinsSampler(xyzzy,60),
+		#OtherJenkinsSampler(xyzzy,60),
 		BuildingJenkinsCount(xyzzy,60)
 		
     ]

@@ -498,7 +498,7 @@ font-size: 80px;
 }
 
 .widget-text.jenkinsbuildingcount{
-background-color: #FFA500;
+background-color: #FF9900;
 font-size: 80px;
 }
 
@@ -508,6 +508,16 @@ background-color: #333366;
 }
 
 .widget-text.cutdates{
+background-color: #333366;
+
+}
+
+.widget-text.releasenumber{
+background-color: #993399;
+
+}
+
+.widget-text.what{
 background-color: #993399;
 
 }

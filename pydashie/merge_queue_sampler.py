@@ -21,7 +21,7 @@ class MergeQueue(DashieSampler):
        match=matches[0:1]
        match2=matches[4:5]
        match3=matches[8:9]
-       return {'text': unicode(match)[3:-2],
+       return {'text': unicode(match)[3:-2]
 				'value':unicode(match2)[3:-2],
 				'writing': unicode(match3)[3:-2],
 				 
