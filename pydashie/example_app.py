@@ -15,17 +15,17 @@ from building_jenkins_count import*
 # Samplers and refresh rates are defined here 
 def run(app, xyzzy):
     samplers = [
-        BuiltJenkins(xyzzy, 3),
-		BuiltJenkinsSampler(xyzzy, 3),
-        LiveIncidentsJiraSampler(xyzzy, 5),
-        JenkinsSampler(xyzzy, 5),
+        BuiltJenkins(xyzzy, 60),
+		BuiltJenkinsSampler(xyzzy, 60),
+        LiveIncidentsJiraSampler(xyzzy, 60),
+        JenkinsSampler(xyzzy, 60),
 		#ConfluenceReleaseNumberSampler(xyzzy, 5),
-        CutFromDevelopSampler(xyzzy, 5),
-        FailedJenkinsSampler(xyzzy, 5),
-		MergeQueue(xyzzy, 5),
-		FailJenkinsCount(xyzzy, 5),
-		OtherJenkinsSampler(xyzzy,5),
-		BuildingJenkinsCount(xyzzy,5)
+        CutFromDevelopSampler(xyzzy, 60),
+        FailedJenkinsSampler(xyzzy, 60),
+		MergeQueue(xyzzy, 60),
+		FailJenkinsCount(xyzzy, 60),
+		OtherJenkinsSampler(xyzzy,60),
+		BuildingJenkinsCount(xyzzy,60)
 		
     ]
 
