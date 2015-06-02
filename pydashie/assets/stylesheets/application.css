@@ -481,46 +481,22 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
   .widget-text.large h3 {
     font-size: 65px; }
 	.widget-text.number {
-    font-size: 150px; }
-	
-
-	
-	
-	
-.widget-text.jenkinsbuilt{
-background-color: #6AA121;
-font-size: 80px;
-}
-
-.widget-text.jenkinsfailedcount{
-background-color: #FF0000;
-font-size: 80px;
-}
-
-.widget-text.jenkinsbuildingcount{
-background-color: #FF9900;
-font-size: 80px;
-}
-
-.widget-text.mergequeue{
-background-color: #333366;
-
-}
-
-.widget-text.cutdates{
-background-color: #993399;
-
-}
-
-.widget-text.releasenumber{
-background-color: #993399;
-
-}
-
-.widget-text.what{
-background-color: #993399;
-
-}
+    font-size: 150px; }	
+	.widget-text.jenkinsbuiltcount{
+	background-color: #6AA121;
+	font-size: 80px;}
+	.widget-text.jenkinsfailedcount{
+	background-color: #FF0000;
+	font-size: 80px;}
+	.widget-text.jenkinsbuildingcount{
+	background-color: #FF9900;
+	font-size: 80px;}
+	.widget-text.confluencemergequeue{
+	background-color: #333366;}
+	.widget-text.confluencecutdatesandrelease{
+	background-color: #993399;}
+	.widget-text.what{
+	background-color: #993399;}
 
 	
 	

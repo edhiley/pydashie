@@ -1,31 +1,24 @@
-#from jenkins_sampler import *
-from jira_sampler import * 
-from confluence_release_sampler import *
-from not_built_jenkins_sampler import *
-from cut_from_develop_sampler import *
-from merge_queue_sampler import *
-from built_jenkins import*
-#from built_jenkins_list import*
-from not_built_jenkins_count_sampler import*
-#from other_build_jenkins import*
-from building_jenkins_count import*
+#importing the data from the correct file
 from active_site_kop import*
+from confluence_cut_from_develop_and_release import *
+from confluence_merge_queue import *
+from jenkins_built_count import*
+from jenkins_building_count import*
+from jenkins_failed_count import*
+from jenkins_failed_other_priority_list import *
+from jira_live_incidents import*
  
 # Samplers and refresh rates are defined here 
 def run(app, xyzzy):
     samplers = [
-        BuiltJenkins(xyzzy, 30),
-		#BuiltJenkinsSampler(xyzzy, 60),
-        LiveIncidentsJiraSampler(xyzzy, 30),
-        #JenkinsSampler(xyzzy, 60),
-		ConfluenceReleaseNumberSampler(xyzzy, 60),
-        CutFromDevelopSampler(xyzzy, 60),
-        FailedJenkinsSampler(xyzzy, 30),
-		MergeQueue(xyzzy, 60),
-		FailJenkinsCount(xyzzy, 30),
-		#OtherJenkinsSampler(xyzzy,60),
-		BuildingJenkinsCount(xyzzy, 30),
-        ActiveSite(xyzzy, 2),
+		ActiveSite(xyzzy, 2),
+		ConfluenceCutFromDevelopAndRelease(xyzzy, 6),
+		ConfluenceMergeQueue(xyzzy, 6),
+        JenkinsBuiltCount(xyzzy, 3),
+		JenkinsBuildingCount(xyzzy, 3),
+		JenkinsFailedCount(xyzzy, 3),
+		JenkinsFailedPriorityList(xyzzy, 3),		
+		JiraLiveIncidents(xyzzy, 3),             
 		
     ]
 
