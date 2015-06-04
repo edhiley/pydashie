@@ -316,6 +316,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
     position:relative;
 }
 
+
 .gridster > * {
     margin: 0 auto;
     -webkit-transition: height .4s;
@@ -328,6 +329,10 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
 .gridster .gs_w{
     z-index: 2;
     position: absolute;
+	overflow:hidden;
+	
+	
+	
 }
 
 .ready .gs_w:not(.preview-holder) {
@@ -335,6 +340,13 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
     -moz-transition: opacity .3s, left .3s, top .3s;
     -o-transition: opacity .3s, left .3s, top .3s;
     transition: opacity .3s, left .3s, top .3s;
+}
+
+.ready .gs_w:not(.preview-holder) {
+    -webkit-transition: opacity .3s, left .3s, top .3s, width .3s, height .3s;
+    -moz-transition: opacity .3s, left .3s, top .3s, width .3s, height .3s;
+    -o-transition: opacity .3s, left .3s, top .3s, width .3s, height .3s;
+    transition: opacity .3s, left .3s, top .3s, width .3s, height .3s;
 }
 
 .gridster .preview-holder {
@@ -497,10 +509,14 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
 	background-color: #993399;}
 	.widget-text.what{
 	background-color: #993399;}
-
+	.widget-text.activesite{
+	background-color: #333366;}
+	.widget-priority-list{
+	height:100%;
+	overflow:auto;}
 	
 	
-
+	
 /*
 
 
@@ -565,7 +581,8 @@ td {
 
 ul, ol {
   padding: 0;
-  margin: 0; }
+  margin: 0; 
+  }
 
 h1, h2, h3, h4, h5, p {
   padding: 0;
@@ -604,7 +621,8 @@ h3 {
   list-style: none; }
 
 .gridster ul {
-  list-style: none; }
+  list-style: none;
+  }
 
 .gs_w {
   width: 100%;
@@ -616,7 +634,8 @@ h3 {
   text-align: center;
   width: 100%;
   display: table-cell;
-  vertical-align: middle; }
+  vertical-align: middle; 
+  }
 
 .widget.status-warning {
   background-color: #e82711;

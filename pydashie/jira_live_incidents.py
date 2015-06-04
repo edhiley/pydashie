@@ -71,21 +71,25 @@ class JiraLiveIncidents(DashieSampler):
 		#todays date
         jiradate=datetime.date(date_object)
 		#the date on the jira
-        day= "days"
+        day= "day"
+        daysplural="days"		
 		#text to go on the end
         diff=((today-jiradate).days)
 		#works out the amount of days the incident has been on Jira
-        result= str(diff) +day 
-		#end result plus the text
+        if diff ==1:
+			result= str(diff) +day 
+        else:
+			result= str(diff) +daysplural 
+		#end result plus the text dependant on days or day
 		
 		
 		
         return {
-            'text': severity,
-            'value': self._findByKey(json, self.SUMMARY_KEY),
-            'label': self.SEVERITY_LABEL_MAP[status],
-            'time': result,
             'status': self._findByKey(json, self.STATUS_KEY),
+			'label': self.SEVERITY_LABEL_MAP[status],
+			'text': severity,
+			'time': result,
+            'value': self._findByKey(json, self.SUMMARY_KEY),
             'importanceLabel': self.SEVERITY_MAP[status],
             'importanceValue': self.SEVERITY_MAP[status],
           }

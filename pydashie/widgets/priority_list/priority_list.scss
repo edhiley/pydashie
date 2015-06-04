@@ -12,29 +12,31 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 // Widget-list styles
 // ----------------------------------------------------------------------------
 
-
-
-
 .widget-priority-list { 
-
   background-color: $background-color;
   vertical-align: top;
-  
 
+  
+  
+  
   .title { 
     color: $title-color;
+
   }
 
   ol, ul {
     margin: 0 15px;
     text-align: left;
     color: $label-color;
-    
+	height: 100%;
+	overflow:hidden; 
+	
   }
 
   ol {
     list-style-position: inside;
-  }
+	
+	  }
 
   li {
     margin-bottom: 5px;
@@ -42,11 +44,9 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   }
 
   .list-nostyle {
-    list-style: none;
+    list-style: none; 
   }
-   .list-nostyle2{
-    list-style: none;
-  }
+  
 
   .label {
    color: $label-color;
@@ -59,8 +59,10 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   .value {
    margin-left: 12px;
    color: $value-color;
-   font-size:20px;
-   margin-left: 10px; 
+   font-size:25px;
+ 
+   
+   
 	}
 
 	
@@ -85,14 +87,13 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 	font-weight: 900;  
   } 
   
-  .time {
+    .time {
   font-style: italic;
   font-size:30px;
   color: white;
   font-weight: 90;
-	position: absolute;
-    right: 50px;
-  
+  margin-right:50px;
+  float:right;
    
   }
   
