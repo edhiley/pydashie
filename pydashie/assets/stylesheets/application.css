@@ -329,7 +329,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
 .gridster .gs_w{
     z-index: 2;
     position: absolute;
-	overflow:hidden;
+
 	
 	
 	
@@ -511,9 +511,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
 	background-color: #993399;}
 	.widget-text.activesite{
 	background-color: #333366;}
-	.widget-priority-list{
-	height:100%;
-	overflow:auto;}
+
 	
 	
 	

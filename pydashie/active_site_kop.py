@@ -15,4 +15,4 @@ class ActiveSite(DashieSampler):
     
     def sample(self):
         liveSite = 'x'
-        return {'site':liveSite}
+        return {'number':liveSite}
