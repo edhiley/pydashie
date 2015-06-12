@@ -1,0 +1,82 @@
+
+<div id='container'>    
+
+<h1 class="title" data-bind="title"></h1>
+
+<ol>
+  <li data-foreach-item="items">
+    <span class="time" data-bind="item.time"></span>
+	<span class="text" data-bind="item.text"></span>
+	<span class="status" data-bind="item.status"></span>
+	<span class="label" data-bind="item.label"></span>
+    <span class="value" data-bind="item.value"></span>
+	<span class="lab1" data-bind="item.lab1"></span>
+    <span class="val1" data-bind="item.val1"></span>
+    
+	
+
+  </li>
+</ol>
+<div class="css-carousel">
+<div class= "css-img" >
+    <ul class="list-nostyle"  id="list1" >
+	
+      <li data-foreach-item="items">
+    
+       	<span class="text" data-bind="item.text"></span>
+        <span data-bind-class="item.statusValue | prepend 'lab1 status-'" data-bind="item.lab1" ></span>
+    	<span data-bind-class="item.importanceValue | prepend 'label importance-'" data-bind="item.label" ></span>
+    	<span class="val1" data-bind="item.val1"></span> 
+       	<span class="status" data-bind="item.status"></span>  
+    	<span class="time" data-bind="item.time"></span>	
+    	<div class="value" data-bind="item.value"></div>
+  
+    
+      </li>
+	  
+    </ul>
+ 	 </div>
+
+  <div class= "css-img">
+   <ul class="list-nostyle2"  id="list2" >
+    
+      <li data-foreach-item="items2">
+         
+		 
+        <span class="text" data-bind="item.text"></span>
+        <span data-bind-class="item.statusValue | prepend 'lab1 status-'" data-bind="item.lab1" ></span>
+        <span data-bind-class="item.importanceValue | prepend 'label importance-'" data-bind="item.label" ></span>
+        <span class="val1" data-bind="item.val1"></span> 
+        <span class="status" data-bind="item.status"></span>  
+        <span class="time" data-bind="item.time"></span>    
+        <div class="value" data-bind="item.value"></div>
+       
+    
+      </li>
+  
+   </ul>
+    </div> 
+	<div class= "css-img" >
+    <ul class="list-nostyle3"  id="list3" >
+	
+      <li data-foreach-item="items3">
+    
+       	<span class="text" data-bind="item.text"></span>
+        <span data-bind-class="item.statusValue | prepend 'lab1 status-'" data-bind="item.lab1" ></span>
+    	<span data-bind-class="item.importanceValue | prepend 'label importance-'" data-bind="item.label" ></span>
+    	<span class="val1" data-bind="item.val1"></span> 
+       	<span class="status" data-bind="item.status"></span>  
+    	<span class="time" data-bind="item.time"></span>	
+    	<div class="value" data-bind="item.value"></div>
+  
+    
+      </li>
+	  
+    </ul>
+ 	 </div>
+</div>
+
+<p class="more-info" data-bind="moreinfo"></p>
+<p class="updated-at" data-bind="updatedAtMessage"></p>
+
+</div>

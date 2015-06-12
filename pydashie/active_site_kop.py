@@ -1,8 +1,11 @@
+from dashie_sampler import DashieSampler
+import requests
 import collections
 import datetime
 import random
+import re 
 
-from dashie_sampler import DashieSampler
+
 
 class ActiveSite(DashieSampler):
 
@@ -15,4 +18,4 @@ class ActiveSite(DashieSampler):
     
     def sample(self):
         liveSite = 'x'
-        return {'site':liveSite}
+        return {'number':liveSite}

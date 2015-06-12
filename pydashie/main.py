@@ -46,6 +46,7 @@ def javascripts():
             #'widgets/clock/clock.coffee',
             'widgets/number/number.coffee',
             'widgets/priority_list/priority_list.coffee',
+			'widgets/jenkins/jenkins.coffee',
         ]
         nizzle = True
         if not nizzle:
@@ -91,9 +92,10 @@ def application_css():
         output.append(open(path).read())
 
     compilelist = [
-        'widgets/priority_list/priority_list.scss'
+        'widgets/priority_list/priority_list.scss',
+		'widgets/jenkins/jenkins.scss'
     ]
-
+    
     css = Scss()
     for path in compilelist:
         scss = open(path).read()

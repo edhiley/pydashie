@@ -99,4 +99,20 @@ class JiraLiveIncidents(DashieSampler):
 	#this is the api that the information is returned from
         r = requests.get('https://nhss-jira.bjss.co.uk/rest/api/2/search?jql=(issuetype+%3D+Incident+AND+cf%5B10805%5D+%3D+live+OR+issuetype+%3D+%22Cherwell+Service+Request%22)+AND+status+not+in+(closed)+ORDER+BY+cf%5B10009%5D+ASC,+created+ASC ', auth=('matt.puzey', 'esabhm7j'), verify=False)  
         print 'refresh'
-        return {'items': [self._parseRequest(issue) for issue in r.json()['issues']]}
+        issues = [self._parseRequest(issue) for issue in r.json()['issues']]
+        items = issues[0:4]
+        items2 = issues[4:8]
+        items3= issues[8:]
+        if len(items2)<1 and len (items3)<1:
+			items2=items
+			items3=items
+			return {'items': items,'items2': items2,'items3': items3}
+        elif len(items2)>1 and len(items3)<1:
+            items3=items
+            return {'items': items,'items2': items2,'items3': items3}
+        else: 
+			return {'items': items,'items2': items2,'items3': items3} 
+		
+
+
+    

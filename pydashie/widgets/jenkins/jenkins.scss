@@ -12,11 +12,13 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 // Widget-list styles
 // ----------------------------------------------------------------------------
 
-.widget-priority-list { 
+.widget-jenkins { 
+
+
   background-color: $background-color;
   vertical-align: top;
+  width:100%;
 
-  
   
   
   .title { 
@@ -28,6 +30,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
     margin: 0 15px;
     text-align: left;
     color: $label-color;
+	
 	
   }
 
@@ -42,6 +45,9 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   }
 
   .list-nostyle {
+    list-style: none; 
+  }
+   .list-nostyle2 {
     list-style: none; 
   }
   
@@ -65,10 +71,10 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 
 	
 	.lab1 {
-   color: $label-color;
+    color: $label-color;
    	font-size:23px; 
-  font-weight: 600; 	
-      
+    font-weight: 600; 
+	
   }
 
   .val1 {
@@ -85,16 +91,21 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 	font-weight: 900;  
   } 
   
-    .time {
+   .time {
   font-style: italic;
   font-size:30px;
   color: white;
   font-weight: 90;
-  margin-right:50px;
   float:right;
+ 
    
   }
-  
+  .issues:not(:empty){
+  height:0px;
+  }
+  .issues2:not(:empty){
+  height:0px;
+  }
   .status {
   font-size:30px;
   color: #FFFFFF;
@@ -102,7 +113,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   margin-left: 10px; 
  
   }
-  
+ 
   .importance-1 { 
   background-color: #FF0000;
   -moz-border-radius: 5px;
@@ -149,6 +160,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   border-radius: 5px;
   padding-left: 5px;
   padding-right: 5px;
+ 
   }
   
   .importance-7 {
@@ -208,12 +220,12 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   }
 
    .status-1 { 
-  background-color: #FF0000;
+ background-color: #FF0000;
   -moz-border-radius: 5px;
   border-radius: 5px;
   padding-left: 5px;
   padding-right: 5px;
-  }  
+  }   
   
   .status-2 {
   background-color: #333333;
@@ -253,6 +265,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   border-radius: 5px;
   padding-left: 5px;
   padding-right: 5px;
+   color:black;
   }
   
   .status-7 {
@@ -321,3 +334,5 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   }
 
 }
+    
+    

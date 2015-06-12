@@ -18,7 +18,9 @@ def run(app, xyzzy):
 		JenkinsBuildingCount(xyzzy, 3),
 		JenkinsFailedCount(xyzzy, 3),
 		JenkinsFailedPriorityList(xyzzy, 3),		
-		JiraLiveIncidents(xyzzy, 3),             
+		JiraLiveIncidents(xyzzy, 3),
+		
+			
 		
     ]
 

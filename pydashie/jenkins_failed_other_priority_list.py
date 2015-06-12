@@ -1,7 +1,7 @@
 import collections
 import datetime
 import random
-import re 
+import re
 from dashie_sampler import DashieSampler
 import requests
 
@@ -15,19 +15,18 @@ class JenkinsFailedPriorityList(DashieSampler):
     SEVERITY_MAP = {
         'red': '1',
         'notbuilt': '2',
-        'blue_anime': '11',
-        'blue': '11',
         'disabled': '5',
         'yellow': '6',
         'red_anime': '7',
         'aborted':'9',
         'yellow_anime': '6',
     }
+	
+	
+    #red= Image.open("/assets/images/Jenkins/red_ball.png")
     SEVERITY_LABEL_MAP = {
-        'red': 'Failed',
+        'red':"Failed",
         'notbuilt': 'Not Built',
-        'blue_anime': 'Building',
-        'blue': 'Built',
         'disabled': 'Disabled',
         'yellow': 'Unstable',
         'red_anime':'Failed-In Progress',
@@ -79,7 +78,7 @@ class JenkinsFailedPriorityList(DashieSampler):
                 'val1': self._findByKey(json, self.JOBS_KEY),
                 'statusLabel': self.SEVERITY_LABEL_MAP[status],
                 'statusValue': self.SEVERITY_MAP[status],
-            }
+				        }
         else:
             return ""
 		#if your returning something new always make sure to include the new class ('lab1','val1' etc)into the html or css
