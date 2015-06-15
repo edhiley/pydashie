@@ -11,14 +11,14 @@ from jira_live_incidents import*
 # Samplers and refresh rates are defined here 
 def run(app, xyzzy):
     samplers = [
-		ActiveSite(xyzzy, 2),
-		ConfluenceCutFromDevelopAndRelease(xyzzy, 6),
-		ConfluenceMergeQueue(xyzzy, 6),
-        JenkinsBuiltCount(xyzzy, 3),
-		JenkinsBuildingCount(xyzzy, 3),
-		JenkinsFailedCount(xyzzy, 3),
-		JenkinsFailedPriorityList(xyzzy, 3),		
-		JiraLiveIncidents(xyzzy, 3),
+		ActiveSite(xyzzy, 20),
+		ConfluenceCutFromDevelopAndRelease(xyzzy, 60),
+		ConfluenceMergeQueue(xyzzy, 60),
+        JenkinsBuiltCount(xyzzy, 30),
+		JenkinsBuildingCount(xyzzy, 30),
+		JenkinsFailedCount(xyzzy, 30),
+		JenkinsFailedPriorityList(xyzzy, 30),		
+		JiraLiveIncidents(xyzzy, 30),
 		
 			
 		

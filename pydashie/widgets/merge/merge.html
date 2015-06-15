@@ -1,0 +1,34 @@
+<h1 class="title" data-bind="title"></h1>
+<table border=2 cellpadding=5>
+<tr>
+<td><h4> User </h4></td>
+<td><h4>  Commit made? </h4></td>
+</tr>
+<tr>
+<td><h3 data-bind="person1 | raw"></h3></td>
+<td><h3 data-bind="commit1 | raw"></h3></td>
+</tr>
+<tr>
+<td><h3 data-bind="person2 | raw"></h3></td>
+<td><h3 data-bind="commit2 | raw"></h3></td>
+</tr>
+<tr>
+<td><h3 data-bind="person3 | raw"></h3></td>
+<td><h3 data-bind="commit3 | raw"></h3></td>
+</tr>
+</table>
+
+
+ <p class="more-info" data-bind="moreinfo | raw"></p> 
+ <p class="site" data-bind="site | raw"></p> 
+
+<p class="updated-at" data-bind="updatedAtMessage"></p>
+<p class="person1" data-bind="item.person1"></p>
+<p class="commit1" data-bind="item.commit1"></p>
+<p class="person2" data-bind="item.person2"></p>
+<p class="commit2" data-bind="item.commit2"></p>
+<p class="person3" data-bind="item.person3"></p>
+<p class="commit3" data-bind="item.commit3"></p>
+
+
+

@@ -35,23 +35,23 @@
 	left: 0;
 	right: 0;
 	opacity: 0;
-	-webkit-animation: css-carousel-fade 105s linear infinite;
-	-moz-animation: css-carousel-fade 105s linear infinite;
-	-ms-animation: css-carousel-fade 105s linear infinite;
-	animation: css-carousel-fade 105s linear infinite;
+	-webkit-animation: css-carousel-fade 66s linear infinite;
+	-moz-animation: css-carousel-fade 66s linear infinite;
+	-ms-animation: css-carousel-fade 66s linear infinite;
+	animation: css-carousel-fade 66s linear infinite;
 }
 .css-carousel .css-img:nth-child(2) {
-	-webkit-animation-delay: 35s;
-	-moz-animation-delay: 35s;
-	-ms-animation-delay:35s;
-	animation-delay: 35s;
+	-webkit-animation-delay: 22s;
+	-moz-animation-delay: 22s;
+	-ms-animation-delay:22s;
+	animation-delay: 22s;
 }
 
 .css-carousel .css-img:nth-child(3) {
-	-webkit-animation-delay: 70s;
-	-moz-animation-delay: 70s;
-	-ms-animation-delay: 70s;
-	animation-delay: 70s;
+	-webkit-animation-delay: 44s;
+	-moz-animation-delay: 44s;
+	-ms-animation-delay: 44s;
+	animation-delay: 44s;
 }
 
 /* To work out the 10% of the frames below use this:
@@ -74,13 +74,13 @@ a/t*100%
 	0% {
     opacity:1;
   }
-  28.6% {
+  29% {
     opacity:1;
   }
-  33.3% {
+  34% {
     opacity:0;
   }
-  95% {
+  96% {
     opacity:0;
   }
   100% {
@@ -91,13 +91,13 @@ a/t*100%
 	0% {
     opacity:1;
   }
-  28.6% {
+  29% {
     opacity:1;
   }
-  33.3% {
+  34% {
     opacity:0;
   }
-  95% {
+  96% {
     opacity:0;
   }
   100% {
@@ -108,13 +108,13 @@ a/t*100%
 	0% {
     opacity:1;
   }
-  28.6% {
+  29% {
     opacity:1;
   }
-  33.3% {
+  34% {
     opacity:0;
   }
-  95% {
+  96% {
     opacity:0;
   }
   100% {
@@ -125,13 +125,13 @@ a/t*100%
    0% {
     opacity:1;
   }
-  28.6% {
+  30% {
     opacity:1;
   }
-  33.3% {
+  34% {
     opacity:0;
   }
-  95% {
+  96% {
     opacity:0;
   }
   100% {
@@ -433,10 +433,6 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
 .gridster .gs_w{
     z-index: 2;
     position: absolute;
-	
-	
-	
-	
 }
 
 .ready .gs_w:not(.preview-holder) {
@@ -607,17 +603,26 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
 	.widget-text.jenkinsbuildingcount{
 	background-color: #FF9900;
 	font-size: 80px;}
-	.widget-text.confluencemergequeue{
-	background-color: #333366;}
 	.widget-text.what{
 	background-color: #993399;}
 	.widget-text.activesite{
 	background-color: #333366;}
-		
+.widget-merge {
+  background-color: #006B6B; }
+  .widget-merge  .title {
+    color: rgba(255, 255, 255, 0.7);
+	}
+  .widget-merge.more-info {
+    color: rgba(255, 255, 255, 0.7); }
+  .widget-merge.updated-at {
+    color: rgba(255, 255, 255, 0.7); }
+  .widget-merge.large h3 {
+    font-size: 65px; }
+  .widget-merge.number {
+    font-size: 150px; }	
+  .widget-merge.confluencemergequeue{
+	background-color: #333366;}
 
-	
-	
-	
 	
 /*
 
@@ -674,12 +679,15 @@ iframe {
   max-width: 100%; }
 
 table {
+
   border-collapse: collapse;
   border-spacing: 0;
-  width: 100%; }
+  width: 100%;
+ }
 
 td {
-  vertical-align: middle; }
+  vertical-align: middle;
+  }
 
 ul, ol {
   padding: 0;
@@ -707,6 +715,11 @@ h3 {
   font-weight: 600;
   color: white; }
 
+h4 {
+  font-size: 25px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);}
+  
 .gridster {
   margin: 0px auto; }
 
