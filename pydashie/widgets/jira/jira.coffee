@@ -1,5 +1,5 @@
 
-class Dashing.Jenkins extends Dashing.Widget
+class Dashing.Jira extends Dashing.Widget
 
 
  ready: ->

@@ -7,6 +7,7 @@ from jenkins_building_count import*
 from jenkins_failed_count import*
 from jenkins_failed_other_priority_list import *
 from jira_live_incidents import*
+from jira_iteration import*
  
 # Samplers and refresh rates are defined here 
 def run(app, xyzzy):
@@ -19,6 +20,7 @@ def run(app, xyzzy):
 		JenkinsFailedCount(xyzzy, 30),
 		JenkinsFailedPriorityList(xyzzy, 30),		
 		JiraLiveIncidents(xyzzy, 30),
+		JiraIteration(xyzzy, 30),
 		
 			
 		

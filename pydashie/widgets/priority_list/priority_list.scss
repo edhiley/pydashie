@@ -47,7 +47,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   
 
   .label {
-   color: $label-color;
+   
    font-weight: 500;  
 	margin-left: 10px;  
 	font-size:30px;  
@@ -65,7 +65,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 
 	
 	.lab1 {
-   color: $label-color;
+   
    	font-size:23px; 
   font-weight: 600; 	
       
@@ -249,10 +249,12 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   
   .status-6 { 
   background-color: #FFDB58;
+  
   -moz-border-radius: 5px;
   border-radius: 5px;
   padding-left: 5px;
   padding-right: 5px;
+  color: #000000;
   }
   
   .status-7 {

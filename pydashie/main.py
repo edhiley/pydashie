@@ -46,7 +46,7 @@ def javascripts():
             #'widgets/clock/clock.coffee',
             'widgets/number/number.coffee',
             'widgets/priority_list/priority_list.coffee',
-			'widgets/jenkins/jenkins.coffee',
+			'widgets/jira/jira.coffee',
         ]
         nizzle = True
         if not nizzle:
@@ -93,7 +93,7 @@ def application_css():
 
     compilelist = [
         'widgets/priority_list/priority_list.scss',
-		'widgets/jenkins/jenkins.scss'
+		'widgets/jira/jira.scss'
     ]
     
     css = Scss()

@@ -21,7 +21,7 @@ class ConfluenceMergeQueue(DashieSampler):
        match= re.findall('<div class="table-wrap"><table style="text-align: left;" class="confluenceTable"><tbody><tr>(.*?)</tr></tbody></table></div>',wikiHome.text)
        matches= re.findall ('<td colspan="1" class="confluenceTd">(.*?)</td>',str(match))
 	   #Using the corresponding tags for the information you want (there weren't any specific tags so had to use "confluenceTd" which is used in all tables on the confluence page)
-       print matches
+       
        person1=matches[0:1]
        commit1=matches[2:3]
        person2=matches[4:5]
