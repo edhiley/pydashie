@@ -18,7 +18,7 @@ class JenkinsBuildingCount(DashieSampler):
 	
 	
     def sample(self):
-        wikiHome = requests.get('http://nhss-aux.bjss.co.uk:8080/view/Main%20Builds/api/json?pretty=true', auth=('matthew.puzey', 'vertebrae'))
+        wikiHome = requests.get('http://nhss-aux.bjss.co.uk:8080/view/Main%20Builds/api/json?pretty=true', auth=('pi.dashboard', 'vertebrae'))
         #wikihome is the api address where the information is
 		
         matches= re.findall ("blue_anime",wikiHome.text)	

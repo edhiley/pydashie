@@ -17,8 +17,8 @@ class JenkinsFailedCount(DashieSampler):
 	
 	
     def sample(self):
-        wikiHome = requests.get('http://nhss-aux.bjss.co.uk:8080/view/Main%20Builds/api/json?pretty=true&tree=jobs[name,lastBuild[result]]', auth=('matthew.puzey', 'vertebrae'))
-        wikiHome2 = requests.get('http://nhss-aux.bjss.co.uk:8080/view/Main%20Builds/api/json?pretty=true' , auth=('matthew.puzey', 'vertebrae'))
+        wikiHome = requests.get('http://nhss-aux.bjss.co.uk:8080/view/Main%20Builds/api/json?pretty=true&tree=jobs[name,lastBuild[result]]', auth=('pi.dashboard', 'vertebrae'))
+        wikiHome2 = requests.get('http://nhss-aux.bjss.co.uk:8080/view/Main%20Builds/api/json?pretty=true' , auth=('pi.dashboard', 'vertebrae'))
 		#wikihome and wikihome2 are the api address' where the information is
 		
         matchesfail= re.findall ("FAILURE",wikiHome.text)	
