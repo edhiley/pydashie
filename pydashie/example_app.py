@@ -21,9 +21,7 @@ def run(app, xyzzy):
 		JenkinsFailedPriorityList(xyzzy, 30),		
 		JiraLiveIncidents(xyzzy, 30),
 		JiraIteration(xyzzy, 30),
-		
-			
-		
+				
     ]
 
     try:
