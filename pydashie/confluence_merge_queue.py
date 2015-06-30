@@ -27,7 +27,7 @@ class ConfluenceMergeQueue(DashieSampler):
        person2=matches[4:5]
        commit2=matches[6:7]
        person3=matches[8:9]
-       commit3=matches[9:10]
+       commit3=matches[10:11]
 	   #To get the specific result needed choose which result you need this is picking 1,5,9(if any columns are added to the table or other tables added above the result numbers wont be correct)
 	   
        return {'person1': unicode(person1)[2:-2],
