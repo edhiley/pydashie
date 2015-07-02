@@ -86,6 +86,6 @@ class JenkinsFailedPriorityList(DashieSampler):
     
     def sample(self):
 	#this is the api that the information is returned from
-        r = requests.get('http://nhss-aux.bjss.co.uk:8080/view/Main%20Builds/api/json?pretty=true', auth=('emma.holmes11', 'vertebrae'))
+        r = requests.get('http://nhss-aux.bjss.co.uk:8080/view/Main%20Builds/api/json?pretty=true', auth=('pi.dashboard', 'vertebrae'))
         jobs = r.json()['jobs']
         return {'items': [self._parseRequest(job) for job in jobs if self._jobFilter(job)]}
