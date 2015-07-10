@@ -104,7 +104,7 @@ class JiraLiveIncidents(DashieSampler):
         items2 = issues[4:8]
         items3= issues[8:]
         #The carousel has 3 different screens to ensure none of the screens are empty we implemented this if statement which if there isn't any data in screen 2 or 3 just use data from screen 1 on them etc
-		if len(items2)<1 and len (items3)<1:
+        if len(items2)<1 and len (items3)<1:
 			items2=items
 			items3=items
 			return {'items': items,'items2': items2,'items3': items3}
