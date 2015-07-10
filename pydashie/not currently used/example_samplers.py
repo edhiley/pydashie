@@ -13,7 +13,7 @@ class ConfluenceReleaseNumberSampler(DashieSampler):
       return 'releasenumber'
   
     def sample(self):
-        wikiHome = requests.get("https://nhss-confluence.bjss.co.uk/display/SPINE/Web+Home%3A+NHS+Spine+II+Wiki", auth=('emma.holmes', 'loopyloo'), verify=False)
+        wikiHome = requests.get("https://nhss-confluence.bjss.co.uk/display/SPINE/Web+Home%3A+NHS+Spine+II+Wiki", auth=('emma.holmes', 'Welcome123'), verify=False)
 
         currentLiveReleasePattern = "\<pre\sid\='currentLiveRelease'\>(.*?)</pre>"
         matches = re.search (currentLiveReleasePattern, wikiHome.text)

@@ -18,7 +18,7 @@ class ConfluenceCutFromDevelopAndRelease(DashieSampler):
 	#name is the link to the main.html
   
     def sample(self):
-        wikiHome = requests.get("https://nhss-confluence.bjss.co.uk/display/SPINE/Web+Home%3A+NHS+Spine+II+Wiki", auth=('emma.holmes', 'loopyloo'), verify=False)
+        wikiHome = requests.get("https://nhss-confluence.bjss.co.uk/display/SPINE/Web+Home%3A+NHS+Spine+II+Wiki", auth=('emma.holmes', 'Welcome123'), verify=False)
         #wikihome is the url where the information is
 		
         currentLiveReleasePattern = "\<pre\sid\='currentLiveRelease'\>(.*?)</pre>"

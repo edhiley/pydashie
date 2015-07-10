@@ -46,6 +46,7 @@ def javascripts():
             #'widgets/clock/clock.coffee',
             'widgets/number/number.coffee',
             'widgets/priority_list/priority_list.coffee',
+			#if making new templates input coffee files here
 			'widgets/jira/jira.coffee',
         ]
         nizzle = True
@@ -93,6 +94,7 @@ def application_css():
 
     compilelist = [
         'widgets/priority_list/priority_list.scss',
+		#if making new templates input scss files here
 		'widgets/jira/jira.scss'
     ]
     

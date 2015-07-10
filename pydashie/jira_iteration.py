@@ -16,7 +16,7 @@ class JiraIteration(DashieSampler):
 	#name is the link to the main.html
   
     def sample(self):
-     jiraHome = requests.get("https://nhss-jira.bjss.co.uk/Dashboard.jspa", auth=('emma.holmes', 'loopyloo'), verify=False)
+     jiraHome = requests.get("https://nhss-jira.bjss.co.uk/Dashboard.jspa", auth=('emma.holmes', 'Welcome123'), verify=False)
     #jirahome is the url where the information is
 		
      announcement= '<b>(.*?)</b>'

@@ -14,7 +14,7 @@ def run(app, xyzzy):
     samplers = [
 		ActiveSite(xyzzy, 20),
 		ConfluenceCutFromDevelopAndRelease(xyzzy, 60),
-		ConfluenceMergeQueue(xyzzy, 60),
+		ConfluenceMergeQueue(xyzzy, 6),
         JenkinsBuiltCount(xyzzy, 30),
 		JenkinsBuildingCount(xyzzy, 30),
 		JenkinsFailedCount(xyzzy, 30),

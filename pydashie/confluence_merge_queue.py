@@ -16,7 +16,7 @@ class ConfluenceMergeQueue(DashieSampler):
 	#name is the link to the main.html
   
     def sample(self):
-       wikiHome = requests.get("https://nhss-confluence.bjss.co.uk/display/SPINE/Merge+Queue", auth=('emma.holmes', 'loopyloo'), verify=False)
+       wikiHome = requests.get("https://nhss-confluence.bjss.co.uk/display/SPINE/Merge+Queue", auth=('emma.holmes', 'Welcome123'), verify=False)
 	   #wikihome is the url where the information is
        match= re.findall('<div class="table-wrap"><table style="text-align: left;" class="confluenceTable"><tbody><tr>(.*?)</tr></tbody></table></div>',wikiHome.text)
        matches= re.findall ('<td colspan="1" class="confluenceTd">(.*?)</td>',str(match).replace(u"\\xa0"," ").encode('utf-8'))
